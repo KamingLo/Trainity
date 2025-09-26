@@ -1,8 +1,8 @@
 :root {
-    --color-primary: #020202;
-    --color-primary-light: #040404;
-    --color-secondary: #6366f1;
+    --color-background: #020202;
+    --color-background-light: #040404;
     --color-accent: #4f46e5;
+    --color-secondary: #6366f1;
     --color-white: #ffffff;
     --color-red:#ff0000;
     --color-dark-red:#cd0000;
@@ -31,6 +31,7 @@
     --spacing-2: 0.5rem;
     --spacing-3: 0.75rem;
     --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
     --spacing-6: 1.5rem;
     --spacing-8: 2rem;
     --spacing-12: 3rem;
@@ -55,16 +56,19 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    text-decoration: none;
 }
 
 body {
     font-family: var(--font-family);
-    background-color: #0a0a0a;
+    background-color: var(--color-background);
     color: #fff;
 }
 
 .header {
+    background-color: var(--color-background-light);
     padding: var(--spacing-3);
+    margin:0 auto;
 }
 
 nav {
@@ -87,7 +91,6 @@ nav {
 .nav-link {
     color: #e5e5e5;
     font-size: var(--font-size-base);
-    text-decoration: none;
     padding: var(--spacing-2) var(--spacing-3);
     border-radius: var(--spacing-2);
     transition: var(--transition-base);
@@ -104,7 +107,6 @@ nav {
     background-color: #ec0000;
     color: white;
     font-size: var(--font-size-base);
-    text-decoration: none;
     padding: var(--spacing-2) var(--spacing-4);
     border-radius: var(--radius-lg);
     transition: var(--transition-base);
@@ -118,7 +120,6 @@ nav {
     text-decoration: none;
     color: white;
     font-size: var(--font-size-base);
-    text-decoration: none;
     padding: var(--spacing-2) var(--spacing-4);
     border: 1px solid var(--color-accent);
     border-radius: var(--radius-lg);
@@ -126,7 +127,7 @@ nav {
 }
 
 .btn-outline:hover{
-    background-color: var(--color-accent);
+    background-color: var(--color-gray-900);
 }
 
 .btn-primary{
@@ -134,7 +135,6 @@ nav {
     color: white;
     background-color: var(--color-accent);
     font-size: var(--font-size-base);
-    text-decoration: none;
     padding: var(--spacing-2) var(--spacing-4);
     border-radius: var(--radius-lg);
     transition: var(--transition-base);
@@ -142,4 +142,121 @@ nav {
 
 .btn-primary:hover{
     background-color: var(--color-secondary);
+}
+
+.footer {
+    margin:auto var(--spacing-16);
+    background: var(--color-background); 
+    color: var(--color-gray-100);
+    padding: 3rem 1.5rem 2rem;
+}
+
+.footer-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-4);
+    align-items: flex-start;
+}
+
+.footer-left .footer-logo {
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom:var(--spacing-2);
+}
+
+.footer-thanks {
+    width: 320px;
+    font-size: 0.95rem;
+    color: var(--color-gray-100); 
+}
+
+.footer-center .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-center .footer-nav a {
+    text-align: left;
+    font-size: var(--spacing-4);
+    color: var(--color-gray-100);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-center .footer-nav a:hover {
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.footer-right h4 {
+    font-size:var(--spacing-5);
+    margin-bottom: var(--spacing-2);
+    color: var(--color-secondary);
+}
+
+.footer-right p {
+    font-size: var(--spacing-4);
+    margin-bottom: var(--spacing-1);
+    width: 24rem;
+    color: var(--color-gray-100);
+}
+
+.footer-right a {
+    color: #f1f5f9;
+    transition: all 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: var(--color-secondary);
+}
+
+.footer-social {
+    margin-top: var(--spacing-4);
+    display: flex;
+    gap: var(--spacing-4);
+}
+
+.footer-social a {
+    font-size: var(--font-size-2xl);
+    color: var(--color-gray-100);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--color-secondary);
+    transform: scale(1.15);
+}
+
+.footer-bottom {
+    margin-top: var(--spacing-8);
+    border-top: 1px solid var(--color-gray-800);
+    padding-top: var(--spacing-6);
+    font-size: var(--spacing-4);
+    color: var(--color-gray-400);
+}
+
+@media (max-width: 900px) {
+
+    .footer{
+        margin: auto;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .footer-center .footer-nav {
+        flex-direction: row;
+        justify-content:left;
+        flex-wrap: wrap;
+        gap: var(--spacing-2);
+    }
+
+    .footer-right p {
+        width: 20rem;
+    }
 }
