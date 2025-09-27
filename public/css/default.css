@@ -83,6 +83,13 @@ nav {
     transition: var(--transition-base);
 }
 
+.burger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white; /* sesuaikan warna */
+}
+
 .nav-menu {
     display: flex;
     gap: var(--spacing-2);
@@ -168,7 +175,7 @@ nav {
 .footer-thanks {
     width: 320px;
     font-size: 0.95rem;
-    color: var(--color-gray-100); 
+    color: var(--color-gray-400); 
 }
 
 .footer-center .footer-nav {
@@ -182,9 +189,15 @@ nav {
 .footer-center .footer-nav a {
     text-align: left;
     font-size: var(--spacing-4);
-    color: var(--color-gray-100);
+    color: var(--color-gray-400);
     border-bottom: 2px solid transparent;
     transition: all 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-center .footer-nav p {
+    font-weight: 700;
+    font-size: var(--spacing-4);
+    color: var(--color-gray-100);
 }
 
 .footer-center .footer-nav a:hover {
@@ -195,18 +208,17 @@ nav {
 .footer-right h4 {
     font-size:var(--spacing-5);
     margin-bottom: var(--spacing-2);
-    color: var(--color-secondary);
+    color: var(--color-gray-100);
 }
 
 .footer-right p {
     font-size: var(--spacing-4);
     margin-bottom: var(--spacing-1);
-    width: 24rem;
-    color: var(--color-gray-100);
+    color: var(--color-gray-400);
 }
 
 .footer-right a {
-    color: #f1f5f9;
+    color: var(--color-gray-400);
     transition: all 0.3s ease;
 }
 
@@ -239,24 +251,82 @@ nav {
     color: var(--color-gray-400);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+
+
+    .burger {
+      display: block;
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    .nav-menu {
+      position: absolute;
+      top: 3.5rem;
+      right: 1rem;
+      background: var(--color-background-light);
+      border: 1px solid var(--color-gray-700);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      flex-direction: column;
+      min-width: 180px;
+      padding: var(--spacing-2);
+      z-index: 1000;
+    }
+
+    /* Default hidden di tablet/mobile */
+    .nav-menu {
+      display: none;
+    }
+
+    .nav-menu.active {
+      display: flex;
+    }
 
     .footer{
         margin: auto;
     }
 
-    .footer-container {
-        grid-template-columns: 1fr; 
-    }
-
-    .footer-center .footer-nav {
-        flex-direction: row;
-        justify-content:left;
-        flex-wrap: wrap;
-        gap: var(--spacing-2);
-    }
-
     .footer-right p {
-        width: 20rem;
-    }
+        width:100%; /* biar nggak kepanjangan */
+  }
+
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    align-items: left;
+    justify-content: left;
+  }
+
+  .footer-thanks {
+    width: 100%;
+    text-align: left;
+  }
+
+  .footer-center .footer-nav {
+    align-items: left;
+    text-align: left;
+  }
+
+  .footer-right p {
+    width: 100%;
+    text-align: left;
+  }
+
+  .footer-social {
+    justify-content: left;
+  }
+
+  .footer-bottom {
+    text-align: left;
+  }
 }
