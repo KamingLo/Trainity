@@ -1,6 +1,25 @@
 fetch("./db/database.json")
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-      })
-      .catch(err => console.error("Error fetching data:", err));
+    .then(res => res.json())
+    .then(data => {
+        renderCards(data);
+    })
+    .catch(err => console.error("Error fetching data:", err));
+
+function renderCards(data) {
+    const container = document.getElementById("content");
+    container.innerHTML = "";
+    container.classList= "cards"
+
+    Object.keys(data).map(key => {
+        const section = data[key];
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = `
+            <img src="https://img.youtube.com/vi/${section.videos[0].link}/hqdefault.jpg" alt="Foto Default ${key}" style="color:black;">
+            <h2 style="color:black;">${key}</h2>
+            <p style="color:black;">${section.short_description}</p>
+        `;
+
+        container.appendChild(card);
+    });
+}
