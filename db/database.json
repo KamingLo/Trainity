@@ -54,10 +54,11 @@
         "title": "HTML Basic: Form (Advanced)",
         "link": "_CNkLKU-LoE"
         }
-    ]},
+  ]},
   "CSS": {
     "description" : "Kalau HTML itu rangka, CSS adalah bajunya. Dia yang bikin web enak dipandang: warna, font, layout, animasi, sampai transisi halus. Dengan CSS modern (kayak Flexbox dan Grid), styling jadi lebih fleksibel tanpa perlu hack aneh-aneh. Plus, ada preprocessor kayak Sass atau framework kayak Tailwind yang bikin styling lebih cepat dan rapi.",
-    "videos" : [{
+    "videos" : [
+    {
       "title": "CSS Basic: Introduction",
       "link": "CleFk3BZB3g"
     },
