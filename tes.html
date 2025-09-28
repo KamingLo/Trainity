@@ -35,15 +35,6 @@
       color: #555;
     }
 
-    .card ul {
-      padding-left: 20px;
-    }
-
-    .card li {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
     .card a {
       color: #007bff;
       text-decoration: none;
@@ -80,11 +71,15 @@
           const title = document.createElement("h2");
           title.textContent = key;
 
+          const image = document.createElement("img");
+          image.src = `https://img.youtube.com/vi/${section.videos[0].link}/hqdefault.jpg`;
+
           const desc = document.createElement("p");
           desc.textContent = section.short_description;
 
           card.appendChild(title);
           card.appendChild(desc);
+          card.appendChild(image);
 
           container.appendChild(card);
         }
