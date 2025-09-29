@@ -1,5 +1,6 @@
 {
   "HTML": {
+    "short_description":"Bahasa markup dasar untuk membuat struktur halaman web, fondasi dari semua situs di internet.",
     "description" : "HTML itu fondasi semua halaman web. Bisa dibilang kayak “rangka” dari sebuah website. Isinya cuma struktur: paragraf, heading, gambar, link, video, form, dan elemen lain. Tanpa HTML, browser nggak punya apa-apa buat ditampilkan. Versi modern (HTML5) udah support banyak fitur multimedia dan semantik, jadi lo bisa bikin web lebih ramah mesin pencari (SEO) sekaligus interaktif tanpa ribet plugin tambahan.",
     "videos" : [
         {
@@ -54,10 +55,12 @@
         "title": "HTML Basic: Form (Advanced)",
         "link": "_CNkLKU-LoE"
         }
-    ]},
+  ]},
   "CSS": {
+    "short_description":"Bahasa styling yang mengatur tampilan visual website: warna, layout, font, animasi, dan responsivitas.",
     "description" : "Kalau HTML itu rangka, CSS adalah bajunya. Dia yang bikin web enak dipandang: warna, font, layout, animasi, sampai transisi halus. Dengan CSS modern (kayak Flexbox dan Grid), styling jadi lebih fleksibel tanpa perlu hack aneh-aneh. Plus, ada preprocessor kayak Sass atau framework kayak Tailwind yang bikin styling lebih cepat dan rapi.",
-    "videos" : [{
+    "videos" : [
+    {
       "title": "CSS Basic: Introduction",
       "link": "CleFk3BZB3g"
     },
@@ -99,6 +102,7 @@
     }
   ]},
   "Javascript": {
+    "short_description":"Bahasa pemrograman utama di web untuk membuat halaman interaktif, dari validasi form sampai aplikasi SPA.",
     "description" : "JS adalah otak dari web modern. Dia bikin halaman jadi interaktif—mulai dari tombol yang ngeklik, form yang validasi real-time, sampai aplikasi web full-blown kayak Gmail. JavaScript modern (ES6 ke atas) punya fitur canggih: async/await buat handle request, modul biar kodenya terstruktur, dan class biar lebih mirip OOP. Intinya, JS bikin web lo hidup.",
     "videos":[
     {
@@ -279,6 +283,7 @@
     }
   ]},
   "NodeJS": {
+    "short_description":"Runtime JavaScript berbasis V8 yang memungkinkan JS dijalankan di server, populer untuk backend modern.",
     "description": "Node.js bawa JavaScript ke dunia server. Jadi lo nggak cuma pakai JS di frontend, tapi juga backend. Dia pakai V8 Engine (mesin yang dipakai Chrome) buat jalanin JS super cepat. Cocok buat bikin API, real-time chat, streaming, atau microservices. Dengan ekosistem npm (package manager-nya), lo bisa nemuin jutaan modul siap pakai buat segala kebutuhan.",
     "videos":[
     {
@@ -379,6 +384,7 @@
     }
   ]},
   "React": {
+    "short_description":"Library frontend dari Facebook untuk membangun UI interaktif dengan konsep komponen dan virtual DOM.",
     "description" : "React adalah library frontend buatan Meta (Facebook). Konsep utamanya: komponen. Jadi lo bisa bikin UI kayak lego, potongan kecil yang reusable. Dia juga punya Virtual DOM yang bikin performa rendering lebih ngebut. Ekosistem React gede banget—Next.js buat SSR, React Native buat mobile, Redux/Zustand buat state management. Simpelnya: React bikin bikin aplikasi modern jauh lebih scalable dan terstruktur.",
     "videos" : [
     {
@@ -403,6 +409,7 @@
     }
   ]},
   "Golang": {
+    "short_description":"Bahasa buatan Google yang cepat, efisien, dan mudah diparalelkan, populer untuk sistem backend berskala besar.",
     "description" : "Golang buatan Google, fokus ke performa dan efisiensi. Sintaksnya simpel kayak C, tapi punya fitur modern kayak garbage collector dan goroutine (concurrency super ringan). Makanya Go populer buat bikin backend dengan traffic tinggi: API, sistem cloud, microservices, sampai aplikasi skala enterprise. Filosofinya: cepat, sederhana, dan bisa di-maintain dengan tim besar.",
     "videos": [
     {
@@ -455,6 +462,7 @@
     }
   ]},
   "PHP": {
+    "short_description":"Bahasa server-side yang dipakai untuk membangun website dinamis, mudah dipelajari, dan punya ekosistem luas.",
     "description": "PHP udah lama jadi tulang punggung web. Walaupun sering diremehin, faktanya mayoritas web (termasuk WordPress) masih jalan dengan PHP. Bahasa ini gampang dipelajari, punya banyak dokumentasi, dan komunitas gede. Versi modern (PHP 7/8) udah jauh lebih cepat dan punya fitur OOP yang solid, bikin PHP tetap relevan di dunia backend.",
     "videos" : [
     {
@@ -563,6 +571,7 @@
     }
   ]},
   "Laravel 8": {
+    "short_description":"Framework PHP modern dengan sintaks elegan, ORM bawaan (Eloquent), serta banyak fitur untuk web development cepat.",
     "description": "Laravel adalah framework PHP modern yang terkenal dengan elegan dan produktif. Bikin backend jadi gampang karena udah ada fitur lengkap: routing, authentication, ORM (Eloquent), queue, scheduler, sampai API-ready. Laravel juga punya ecosystem kuat: Laravel Breeze/Jetstream buat auth, Livewire/Inertia buat interaktivitas. Intinya, Laravel bikin developer lebih fokus ke logika bisnis daripada ngurusin hal-hal dasar berulang.",
     "videos": [
     {
@@ -660,66 +669,6 @@
     {
       "title": "Hosting website (Gratis)",
       "link": "wNmgAm9xvwk"
-    }
-  ]},
-  "Git": {
-    "description": "Git adalah version control system—alat buat ngatur perubahan kode. Dengan Git, lo bisa nge-track perubahan, rollback kalau ada error, kerja bareng tim tanpa tabrakan, dan manage branch buat eksperimen. Git modern (plus GitHub) jadi semacam “tempat nongkrong” developer, bukan cuma buat nyimpen kode tapi juga kolaborasi lewat pull request, issues, dan code review.",
-    "videos": [
-    {
-      "title": "Apa itu Git & Github",
-      "link": "lTMZxWMjXQU"
-    },
-    {
-      "title": "Working with Github",
-      "link": "Q3Id0DgcrXY"
-    },
-    {
-      "title": "Github: Branch",
-      "link": "k1QXd-8VbPY"
-    },
-    {
-      "title": "Github: Fork",
-      "link": "8rry2ncZmfg"
-    },
-    {
-      "title": "Bekerja dengan Git",
-      "link": "e-6OkXRqWaE"
-    },
-    {
-      "title": "Git Branch & Merge",
-      "link": "EGl7KxVOyNs"
-    },
-    {
-      "title": "Git Merge Conflict",
-      "link": "Vfwfeve72PA"
-    },
-    {
-      "title": "Git Remote",
-      "link": "ppi_M-FX1CY"
-    },
-    {
-      "title": "Github Pages",
-      "link": "rgDDWhQe-ow"
-    },
-    {
-      "title": "Multiple Remotes",
-      "link": "XeOf2wdnFlc"
-    },
-    {
-      "title": "Remote Branch",
-      "link": "4OLGYv3uVV4"
-    },
-    {
-      "title": "Gitignore",
-      "link": "LK3kX4n-vLM"
-    },
-    {
-      "title": "Git Rebase",
-      "link": "4kJrcuIvbOo"
-    },
-    {
-      "title": "Git & Web Hosting",
-      "link": "N7vbVc3oQqI"
     }
   ]}
 }
