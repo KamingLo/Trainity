@@ -66,6 +66,14 @@
     margin: var(--spacing-16) var(--spacing-32);
 }
 
+.benefit-section{
+    margin: 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--spacing-16) var(--spacing-32);
+}
+
 .hero-left {
     flex: 1;
 }
