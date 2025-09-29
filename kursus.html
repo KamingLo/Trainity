@@ -3,6 +3,7 @@
 <head>
     <link rel="icon" type="image/png" href="./public/assets/TrainityMarkWhite.png">
     <link rel="stylesheet" href="./public/css/default.css">
+    <link rel="stylesheet" href="./public/css/kaming.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,17 +32,35 @@
         </nav>
     </header>
 
-    <main>
-        <section>
-          <iframe width="560" height="315" 
-                  src="https://www.youtube.com/embed/N7vbVc3oQqI" 
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen>
-          </iframe>
+    <hr>
+
+    <main class="main-container">
+        <section class="hero-section">
+            <div class="hero-left">
+                <h1>Belajar Gratis, Mudah Dipahami, Langsung Bisa Dipakai</h1>
+                <p>
+                    Akses kursus gratis dengan materi berkualitas tinggi, dirancang untuk membekali kamu keterampilan masa depan.
+                </p>
+            </div>
+            
+            <div class="hero-right">
+                <img src="./public/assets/Web-Mockup.webp" alt="Hasil Kursus Trainity">
+            </div>
+        </section>
+        
+        <section class="rounded-section">
+            <div class="courses" id="courses">
+                <h2 class="subtitle">Kursus yang Tersedia</h2>
+                <p class="subtitle">Kursus yang kami sediakan berasal dari kerja sama dengan 
+                    <strong>"Web Programming Unpas"</strong>
+                </p>
+            </div>
+
+            <div class="content" id="content"></div>
         </section>
     </main>
+
+<hr>
 
     <footer class="footer">
       <div class="footer-container">
@@ -89,8 +108,10 @@
       </div>
     </footer>
 
+
     <script src="./public/js/burger.js"></script>
     <script src="./public/js/navbar.js"></script>
+    <script src="./public/js/kaming/fetcher.js"></script>
     <script src="./public/js/footer.js"></script>
 </body>
 </html>

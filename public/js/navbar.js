@@ -39,8 +39,7 @@ if (isAuthenticated) {
 
         logout.addEventListener("click", (e) => {
             e.preventDefault();
-            sessionStorage.removeItem("authenticated");
-            window.location.href = "./index.html";
+            sessionStorage.removeItem("Authenticated");
         });
 
     navbar.appendChild(dashboard);

@@ -1,8 +1,8 @@
 :root {
     --color-background: #020202;
     --color-background-light: #040404;
-    --color-accent: #4f46e5;
-    --color-secondary: #6366f1;
+    --color-accent: #1369ff;
+    --color-secondary: #4d8eff;
     --color-white: #ffffff;
     --color-red:#ff0000;
     --color-dark-red:#cd0000;
@@ -72,6 +72,12 @@ body {
     background-color: var(--color-background-light);
     padding: var(--spacing-3);
     margin:0 auto;
+}
+
+hr{
+    border:none;
+    height: 1px;
+    background-color: var(--color-gray-700);
 }
 
 nav {
