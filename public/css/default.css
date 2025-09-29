@@ -63,6 +63,9 @@ body {
     font-family: var(--font-family);
     background-color: var(--color-background);
     color: #fff;
+    /* Menambahkan motif dot grid sebagai background */
+    background-image: radial-gradient(var(--color-gray-800) 1px, transparent 1px);
+    background-size: 25px 25px;
 }
 
 .header {
@@ -252,8 +255,6 @@ nav {
 }
 
 @media (max-width: 1024px) {
-
-
     .burger {
       display: block;
       font-size: 2rem;
@@ -290,8 +291,13 @@ nav {
 
     .footer-right p {
         width:100%; /* biar nggak kepanjangan */
-  }
+    }
 
+    /* Aturan yang sudah dipindahkan ke default tidak perlu di sini lagi */
+
+    .form-box {
+        padding: var(--spacing-8);
+    }
 }
 
 @media (max-width: 768px) {
@@ -329,4 +335,13 @@ nav {
   .footer-bottom {
     text-align: left;
   }
+
+  section {
+      padding: var(--spacing-4);
+  }
+
+  .form-box {
+      padding: var(--spacing-6);
+  }
 }
+
