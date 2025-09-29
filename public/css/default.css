@@ -71,6 +71,12 @@ body {
     margin:0 auto;
 }
 
+hr{
+    border:none;
+    height: 1px;
+    background-color: var(--color-gray-700);
+}
+
 nav {
     display: flex;
     align-items: center;
