@@ -462,7 +462,7 @@
     }
   ]},
   "PHP": {
-    "short_description":"Bahasa server-side klasik yang banyak dipakai untuk membangun website dinamis, mudah dipelajari, dan punya ekosistem luas.",
+    "short_description":"Bahasa server-side yang dipakai untuk membangun website dinamis, mudah dipelajari, dan punya ekosistem luas.",
     "description": "PHP udah lama jadi tulang punggung web. Walaupun sering diremehin, faktanya mayoritas web (termasuk WordPress) masih jalan dengan PHP. Bahasa ini gampang dipelajari, punya banyak dokumentasi, dan komunitas gede. Versi modern (PHP 7/8) udah jauh lebih cepat dan punya fitur OOP yang solid, bikin PHP tetap relevan di dunia backend.",
     "videos" : [
     {

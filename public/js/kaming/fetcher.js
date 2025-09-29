@@ -15,9 +15,12 @@ function renderCards(data) {
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
-            <img src="https://img.youtube.com/vi/${section.videos[0].link}/hqdefault.jpg" alt="Foto Default ${key}" style="color:black;">
-            <h2 style="color:black;">${key}</h2>
-            <p style="color:black;">${section.short_description}</p>
+            <img src="https://img.youtube.com/vi/${section.videos[0].link}/hqdefault.jpg" alt="Foto Default ${key}">
+            <h3>${key}</h3>
+            <div>
+                <p>${section.short_description}</>
+            </div>
+            <a>Beli Kursus</a>
         `;
 
         container.appendChild(card);
