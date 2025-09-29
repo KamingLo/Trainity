@@ -1,2 +1,2 @@
 # db folder
-untuk folder database dengan json
+untuk folder database dengan json.
