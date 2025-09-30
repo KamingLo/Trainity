@@ -138,8 +138,7 @@
 
 .card:hover{
     box-shadow: 
-    0 4px 8px var(--color-gray-900),
-    0 4px 8px var(--color-accent);
+    0 2px 16px var(--color-accent);
     transform: translateY(-10px);
 }
 
@@ -194,6 +193,104 @@
 
 .search::placeholder {
   color: var(--color-gray-400);
+}
+
+.carousel-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.carousel-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-btn {
+    background: var(--color-accent);
+    color: var(--color-gray-100);
+    border: none;
+    border-radius: 25%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover{
+    box-shadow: 0 2px 16px var(--color-accent);
+    background:var(--color-secondary);
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+    
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 280px;
+    background: var(--color-black-800);
+    border: 1px solid var(--color-gray-700);
+    border-radius: var(--spacing-2);
+    padding: var(--spacing-4);
+    transition: all 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.carousel-card:hover {
+    box-shadow: 0 2px 16px var(--color-accent);
+    transform: translateY(-6px);
+}
+
+.carousel-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: none;
+    background:none;
+}
+
+.carousel-body img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: var(--spacing-1);
+    margin-bottom: var(--spacing-3);
+}
+
+.carousel-body h3 {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-100);
+    margin-bottom: auto; /* biar tombol tetep di bawah */
+}
+
+.btn-link {
+    margin-top: var(--spacing-4);
+    padding: var(--spacing-2) var(--spacing-3);
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--color-gray-100);
+    background-color: var(--color-accent);
+    border-radius: var(--spacing-2);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-link:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
 }
 
 @media (max-width:1024px){
