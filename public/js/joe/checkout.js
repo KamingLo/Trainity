@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const loadingScreen = document.getElementById("loading-screen");
     const checkoutContent = document.querySelector(".checkout-container");
 
-    // Mapping harga kursus
     const coursePrices = {
         "Laravel 8": 150000,
         "HTML": 200000,
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let activeMethod = null;
 
-    // === Payment methods ===
     methods.forEach(method => {
         const checkbox = method.querySelector(".payment-check");
         const body = method.querySelector(".payment-body");
@@ -29,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         checkbox.addEventListener("change", () => {
             if (checkbox.checked) {
-                // reset semua
                 methods.forEach(m => {
                     const c = m.querySelector(".payment-check");
                     const b = m.querySelector(".payment-body");
@@ -76,21 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
         placeOrderBtn.disabled = !valid;
     }
 
-    // === Voucher langsung aktif saat load ===
     const voucherMethod = Array.from(methods).find(
         m => m.querySelector("img")?.alt === "FREE"
     );
     if (voucherMethod) {
         const voucherCheckbox = voucherMethod.querySelector(".payment-check");
         voucherCheckbox.checked = true;
-        voucherCheckbox.addEventListener("click", e => e.preventDefault()); // cegah uncheck
+        voucherCheckbox.addEventListener("click", e => e.preventDefault());
 
         voucherMethod.classList.add("active");
         const voucherBody = voucherMethod.querySelector(".payment-body");
         if (voucherBody) voucherBody.style.display = "block";
         activeMethod = voucherMethod;
 
-        // disable payment lain
         methods.forEach(m => {
             if (m !== voucherMethod) {
                 m.classList.add("payment-disabled");
@@ -102,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // === Ambil data kursus dari URL ===
     const params = new URLSearchParams(window.location.search);
     const kursusKey = params.get("key");
 
@@ -119,10 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2 class="order-title">Kursus ${kursusKey}</h2>
                     `;
 
-                    // ambil harga berdasarkan key
                     const price = coursePrices[kursusKey] || 0;
 
-                    // update order details
                     const orderDetails = document.querySelector(".order-details");
                     orderDetails.innerHTML = `
                         <div style="display: flex;">
@@ -142,16 +134,14 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch(err => console.error("Error loading course:", err))
             .finally(() => {
-                // kasih delay + animasi fade
                 setTimeout(() => {
                     loadingScreen.classList.add("fade-out");
                     setTimeout(() => {
                         loadingScreen.style.display = "none";
-                        // FIX: Gunakan visibility atau class, jangan ubah display
                         checkoutContent.style.visibility = "visible";
                         checkoutContent.style.opacity = "1";
-                    }, 500); // waktu fade
-                }, 1500); // delay loading 1.5 detik
+                    }, 500);
+                }, 1500);
             });
     } else {
         loadingScreen.style.display = "none";
@@ -159,11 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
         checkoutContent.style.opacity = "1";
     }
 
-    // === Event Place Order (Pop-out) ===
     placeOrderBtn.addEventListener("click", (e) => {
         e.preventDefault();
 
-        // buat / ambil pop-up
         let popup = document.getElementById("order-popup");
         if (!popup) {
             popup = document.createElement("div");
@@ -176,13 +164,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const popupContent = popup.querySelector(".popout");
         popup.style.display = "flex";
 
-        // tampilan loading
         popupContent.innerHTML = `
             <div class="anim"></div>
             <p>Pembelian anda sedang diproses</p>
         `;
 
-        // simulasi loading 2 detik → ganti ke sukses
         setTimeout(() => {
             const style = document.createElement("style");
             style.textContent = `
