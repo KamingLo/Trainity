@@ -35,15 +35,20 @@
     <hr>
 
     <main class="main-container">
-        <section class="margin-section">
-            <div class="courses" id="courses">
-                <h2 class="subtitle">Kursus yang kamu miliki</h2>
-                <p class="subtitle">Kursus yang kami sediakan berasal dari kerja sama bersama 
-                    <strong>"Web Programming Unpas"</strong>
-                </p>
+        <section class="rounded-section">    
+            <div class="carousel-header">
+                <h2>Kelas Saya</h2>
+                <div class="carousel-buttons">
+                    <button class="carousel-btn" id="prev">&#10094;</button>
+                    <button class="carousel-btn" id="next">&#10095;</button>
+                </div>
             </div>
 
-            <div class="content" id="content"></div>
+            <div class="carousel-container" id="carousel"></div>
+        </section>
+
+        <section id="video">
+
         </section>
     </main>
 
@@ -95,10 +100,12 @@
       </div>
     </footer>
 
+    <a href="./belajar.html?key=Laravel 8">Tes</a>
 
     <script src="./public/js/burger.js"></script>
     <script src="./public/js/navbar.js"></script>
-    <script src="./public/js/kaming/spa.js"></script>
     <script src="./public/js/footer.js"></script>
+    <script src="./public/js/kaming/carouselCourse.js"></script>
+    <script src="./public/js/kaming/keyFetcher.js"></script>
 </body>
 </html>
