@@ -21,7 +21,7 @@ function renderCards(data) {
             <div>
                 <p>${section.short_description}</>
             </div>
-            <a href="./checkout.html?key=${key}">Beli Kursus</a>
+            <a href="./belajar.html?key=${key}">Pelajari Sekarang</a>
         `;
 
         container.appendChild(card);

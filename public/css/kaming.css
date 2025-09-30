@@ -99,10 +99,17 @@
 }
 
 .rounded-section{
-    margin: var(--spacing-16) var(--spacing-32);
+    margin: var(--spacing-16) var(--spacing-16);
     padding: var(--spacing-4);
     background-color: var(--color-black-900);
     border: 1px solid var(--color-gray-700);
+    border-radius: var(--spacing-4);
+}
+
+.margin-section{
+    margin: var(--spacing-16) var(--spacing-32);
+    padding: var(--spacing-4);
+    background-color: var(--color-black-900);
     border-radius: var(--spacing-4);
 }
 
@@ -114,6 +121,7 @@
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(4, 1fr);
+    margin: var(--spacing-4);
 }
 
 .card {
@@ -165,6 +173,29 @@
     background-color: var(--color-secondary);
 }
 
+.search {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 14px;
+  margin: var(--spacing-2) var(--spacing-4);
+  color: var(--color-gray-200);
+  background-color: var(--color-black-800);
+  border: 1px solid var(--color-gray-500);
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 1px 3px var(--color-accent);
+}
+
+.search::placeholder {
+  color: var(--color-gray-400);
+}
+
 @media (max-width:1024px){
     .main-container{
         text-align: left;
@@ -202,10 +233,16 @@
     }
 
     .courses .subtitle{
-        margin: var(--spacing-2);
+        margin:var(--spacing-2) 0;
+
+    }
+
+    .search{
+        margin: 0;
     }
 
     .cards {
+        margin: 0;
         margin-top: var(--spacing-4);
         grid-template-columns: repeat(2, 1fr);
     }
