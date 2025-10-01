@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🚀 Trainity
 
 **Trainity** adalah situs belajar pemrograman gratis yang didukung oleh **Web Programming UNPAS** sebagai salah satu media pengajarnya.  
