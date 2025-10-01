@@ -14,6 +14,6 @@ function Iframe(link){
 function renderIframe(link){
     document.getElementById("youtube").setAttribute(
         "src", 
-        `https://www.youtube.com/embed/${link.link}`
+        `https://www.youtube.com/embed/${link}`
     );
 }
