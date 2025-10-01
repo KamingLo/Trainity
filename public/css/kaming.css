@@ -196,6 +196,7 @@
 }
 
 .carousel-header{
+    margin-left: var(--spacing-4);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -231,12 +232,13 @@
     padding: 10px;
     scroll-behavior: smooth;
 }
-    
+
 .carousel-container::-webkit-scrollbar {
     display: none;
 }
 
 .carousel-card {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -255,6 +257,7 @@
 }
 
 .carousel-body {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -293,13 +296,33 @@
   transform: translateY(-2px);
 }
 
+.video-container {
+    margin: 0 var(--spacing-32);
+    padding: var(--spacing-4);
+}
+
+.video iframe {
+    width: 100%;
+    max-width: 1920px;
+    aspect-ratio: 16/9;
+    border: none;
+}
+
+.courses-detail h2{
+    margin: var(--spacing-4);
+}
+
+.courses-detail p{
+    margin: var(--spacing-4);
+}
+
 @media (max-width:1024px){
     .main-container{
         text-align: left;
     }
 
     .rounded-section{
-        margin: var(--spacing-4);
+        margin: var(--spacing-8) var(--spacing-4);
     }
     
     .hero-section {
@@ -343,6 +366,19 @@
         margin-top: var(--spacing-4);
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .video-container {
+        height: auto;
+        margin: var(--spacing-4);
+    }
+
+    .video iframe {
+        width: 100%;
+    }
+
+    .courses-detail{
+        text-align: left;
+    }
 }
 
 @media (max-width: 768px) {
@@ -352,5 +388,14 @@
 
     .card{
         padding: var(--spacing-3);
+    }
+
+    .video-container {
+        margin: var(--spacing-4);
+        padding: 8px;
+    }
+
+    .video iframe {
+        width: 100%;
     }
 }

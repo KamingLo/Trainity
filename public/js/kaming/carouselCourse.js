@@ -1,52 +1,32 @@
 const carousel = document.getElementById("carousel");
 
 function renderCarousel(data){
-    data.forEach(item => {
+    data.videos.forEach(item => {
         const card = document.createElement("div");
         card.className = "carousel-card";
 
         card.innerHTML = `
-            <button class="carousel-body" data="${item.link}">
+            <button class="carousel-body" data-link="${item.link}" data-title="${item.title}" >
                 <img src="https://img.youtube.com/vi/${item.link}/hqdefault.jpg" alt="${item.title}">
                 <h3>${item.title}</h3>
-                <a href="#" class="btn-link">Klik disini</a>
+                <a class="btn-link">Klik disini</a>
             </button>
         `;
         carousel.appendChild(card);
     });
 
-    Iframe(data[0].link);
-
+    Iframe(data.videos[0].link);
+    renderDetail(data, data.videos[0].title);
+    
+    
     document.querySelectorAll(".carousel-body").forEach(btn => {
         btn.addEventListener("click", () => {
-            const link = btn.getAttribute("data");
+            const link = btn.getAttribute("data-link");
+            const title = btn.getAttribute("data-title");
+            renderDetail(data, title);
             renderIframe(link);
         });
     });
-}
-
-function Iframe(link){
-    document.getElementById("video").innerHTML = `
-        <iframe 
-        id="youtube"
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/${link}" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-        </iframe>
-    `;
-}
-
-function renderIframe(link){
-    console.log("this one",link);
-
-    document.getElementById("youtube").setAttribute(
-        "src", 
-        `https://www.youtube.com/embed/${link}`
-    );
 }
 
 const prevBtn = document.getElementById("prev");
