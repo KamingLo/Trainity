@@ -9,7 +9,7 @@ Dengan tampilan modern, navigasi sederhana, dan konten yang ramah pemula, Traini
 
 ## 🔗 Demo Langsung
 Coba langsung tanpa instalasi:  
-👉 [Trainity – GitHub Pages](https://kaminglo.github.io/Trainity)  
+👉 [Trainity – GitHub Pages](https://kaminglo.github.io/Trainity/index.html)  
 
 ---
 
