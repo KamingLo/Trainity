@@ -35,30 +35,24 @@
     <hr>
 
     <main class="main-container">
-        <section class="hero-section">
-            <div class="hero-left">
-                <h1>Belajar Gratis, Mudah Dipahami, Langsung Bisa Dipakai</h1>
-                <p>
-                    Akses kursus gratis dengan materi berkualitas tinggi, dirancang untuk membekali kamu keterampilan masa depan.
-                </p>
+        <section class="rounded-section">    
+            <div class="carousel-header">
+                <h2>Kelas Saya</h2>
+                <div class="carousel-buttons">
+                    <button class="carousel-btn" id="prev">&#10094;</button>
+                    <button class="carousel-btn" id="next">&#10095;</button>
+                </div>
             </div>
-            
-            <div class="hero-right">
-                <img src="./public/assets/Web-Mockup.webp" alt="Hasil Kursus Trainity">
-            </div>
+
+            <div class="carousel-container" id="carousel"></div>
         </section>
-        
-        <section class="rounded-section">
-            <div class="courses" id="courses">
-                <h2 class="subtitle">Kursus yang Tersedia</h2>
-                <p class="subtitle">Kursus yang kami sediakan berasal dari kerja sama dengan 
-                    <strong>"Web Programming Unpas"</strong>
-                </p>
-            </div>
 
-            <input class="search" type="text" id="search" placeholder="Cari kursus">
+        <section class="video-container">
+          <div class="video" id="video"></div>
+        </section>
 
-            <div class="content" id="content"></div>
+        <section>
+            <div class="rounded-section courses-detail" id="courses-detail"></div>
         </section>
     </main>
 
@@ -110,12 +104,12 @@
       </div>
     </footer>
 
-
     <script src="./public/js/burger.js"></script>
     <script src="./public/js/navbar.js"></script>
-    <script src="./public/js/kaming/kursusFetcher.js"></script>
-    <script src="./public/js/kaming/renderKursus.js"></script>
-    <script src="./public/js/kaming/search.js"></script>
     <script src="./public/js/footer.js"></script>
+    <script src="./public/js/kaming/carouselCourse.js"></script>
+    <script src="./public/js/kaming/youtubeVideo.js"></script>
+    <script src="./public/js/kaming/detailCourses.js"></script>
+    <script src="./public/js/kaming/keyFetcher.js"></script>
 </body>
 </html>
