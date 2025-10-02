@@ -1,0 +1,191 @@
+/* === GLOBAL & HELPER CLASSES === */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+::selection {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+
+/* === SHARED LOGIN & REGISTER STYLES === */
+/* Aturan ini berlaku untuk kedua halaman */
+
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 72px); /* 72px adalah tinggi header */
+    padding: var(--spacing-8);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 1000px; /* Lebar yang lebih besar */
+    min-height: 700px;  /* Tinggi yang lebih besar */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-accent);
+    overflow: hidden;
+}
+
+.form-box {
+    padding: var(--spacing-12) calc(var(--spacing-12) + 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: transparent;
+}
+
+.form-box h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-6);
+    color: var(--color-white);
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: var(--spacing-4);
+}
+
+.input-box input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--color-gray-600);
+    border-radius: 0;
+    padding: var(--spacing-2) 35px var(--spacing-2) 35px;
+    font-size: var(--font-size-base);
+    color: var(--color-white);
+    outline: none;
+    transition: var(--transition-base);
+}
+
+.input-box input:focus-visible {
+    border-bottom-color: var(--color-secondary);
+    box-shadow: 0 4px 12px -4px rgba(99, 102, 241, 0.4);
+}
+.input-box input:focus {
+     border-bottom-color: var(--color-secondary);
+}
+
+
+.input-box .bxs-user,
+.input-box .bxs-envelope,
+.input-box .bxs-lock-alt {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-gray-400);
+}
+
+.input-box #togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.form-box .btn {
+    width: 60%;
+    display: block;
+    margin: 20px auto 0;
+    padding: var(--spacing-3);
+    font-size: var(--font-size-lg);
+    background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+    color: var(--color-white);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+.form-box .btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.6);
+}
+
+.toggle-box-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-12);
+    text-align: center;
+    color: var(--color-white);
+}
+
+.toggle-box-visual h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    margin-bottom: var(--spacing-4);
+}
+
+.toggle-box-visual p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-200);
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.toggle-box-visual .btn {
+    display: inline-block;
+    margin-top: var(--spacing-6);
+    background: transparent;
+    border: 2px solid var(--color-white);
+    padding: var(--spacing-2) var(--spacing-6);
+    border-radius: 50px;
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.toggle-box-visual .btn:hover {
+    background: var(--color-white);
+    color: var(--color-accent);
+}
+
+/* --- Page-Specific Modifiers --- */
+/* Aturan ini untuk mengatur perbedaan kecil antara Login & Register */
+
+/* Untuk Halaman Login */
+.auth-container--login {
+    background: linear-gradient(115deg, var(--color-background-light) 50%, var(--color-accent) 50%);
+}
+
+/* Untuk Halaman Register */
+.auth-container--register {
+    background: linear-gradient(115deg, var(--color-accent) 50%, var(--color-background-light) 50%);
+}
+
+/* --- Media Queries --- */
+@media (max-width: 820px) {
+    .auth-container {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        min-height: auto;
+    }
+    .toggle-box-visual {
+        display: none;
+    }
+    .form-box {
+        padding: var(--spacing-8);
+    }
+}

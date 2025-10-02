@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="./public/assets/TrainityMarkWhite.png">
+    <link rel="stylesheet" href="./public/css/default.css">
+    <link rel="stylesheet" href="./public/css/joe.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainity | Solusi Belajar Koding Secara Online</title>
+</head>
+<body>
+    <header class="header">
+        <nav style="display: flex;">
+            <div class="logo-navbar">
+                <a href="./index.html">
+                    <img class="logo-img" src="./public/assets/TrainityFullWhite.png" alt="Logo Trainity">
+                </a>
+            </div>
+
+            <div class="burger" id="burger">
+                <i class="bx bx-menu"></i>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./kursus.html" class="nav-link">Kursus</a>
+                <a href="./lainnya.html" class="nav-link" id="lainnya-link">Lainnya</a>
+                <a href="./login.html" class="btn-outline" id="login-link">Login</a>
+                <a href="./signup.html" class="btn-primary" id="signup-link">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div id="loading-screen">
+                <div class="anim"></div>
+                <p>Loading</p>
+            </div>
+
+            <div id="order-popup" class="order-popup">
+                <div class="popout">
+                    <div class="anim"></div>
+                    <p>Pembelian anda sedang diproses</p>
+                </div>
+            </div>
+
+            <div class="checkout-container">
+                <div class="checkout-box">
+                    <div class="checkout-left">
+                        <h1>CHECKOUT</h1>
+
+                        <h2>VOUCHER</h2>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/FREE.png" alt="FREE">
+                                    <span>Discount 100%</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="FREE">Trainity sedang bagi-bagi vocher gratis! Ayo gunakan sekarang.<span style="font-size: small; color: rgb(212, 212, 212);"><br>berlaku hingga 31 Desember 2030</span></label>
+                            </div>
+                        </label>
+
+                        <h2>OTHER PAYMENT METHODS</h2>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/BCA.png" alt="BCA">
+                                    <span>BCA</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="bca-id">Nomor Rekening BCA</label>
+                                <input type="text" id="bca-id" class="payment-input" placeholder="Masukkan nomor rekening BCA Anda">
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/MANDIRI.png" alt="Mandiri">
+                                    <span>Mandiri</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="mandiri-id">Nomor Rekening Mandiri</label>
+                                <input type="text" id="mandiri-id" class="payment-input" placeholder="Masukkan nomor rekening Mandiri Anda">
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/BRI.png" alt="BRI">
+                                    <span>BRI</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="bri-id">Nomor Rekening BRI</label>
+                                <input type="text" id="bri-id" class="payment-input" placeholder="Masukkan nomor rekening BRI Anda">
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/CIMB.png" alt="CIMB Niaga">
+                                    <span>CIMB Niaga</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="cimb-id">Nomor Rekening CIMB Niaga</label>
+                                <input type="text" id="cimb-id" class="payment-input" placeholder="Masukkan nomor rekening CIMB Anda">
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/OCBC.png" alt="OCBC NISP">
+                                    <span>OCBC NISP</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="ocbc-id">Nomor Rekening OCBC</label>
+                                <input type="text" id="ocbc-id" class="payment-input" placeholder="Masukkan nomor rekening OCBC Anda">
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/PayPal.png" alt="PayPal">
+                                    <span>PayPal</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="paypal-id">Email PayPal</label>
+                                <input type="email" id="paypal-id" class="payment-input" placeholder="Masukkan email PayPal Anda">
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/OVO.png" alt="OVO">
+                                    <span>OVO</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="ovo-id">Nomor Telepon OVO</label>
+                                <input type="text" id="ovo-id" class="payment-input" placeholder="Masukkan nomor HP OVO Anda">
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/DANA.png" alt="DANA">
+                                    <span>DANA</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="dana-id">Nomor Telepon DANA</label>
+                                <input type="text" id="dana-id" class="payment-input" placeholder="Masukkan nomor HP DANA Anda">
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/GoPay.png" alt="GoPay">
+                                    <span>GoPay</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="gopay-id">Nomor Telepon GoPay</label>
+                                <input type="text" id="gopay-id" class="payment-input" placeholder="Masukkan nomor HP GoPay Anda">
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/QRIS.png" alt="QRIS">
+                                    <span>QRIS</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <p style="color: #5f5f5f;">Silakan scan QR Code QRIS untuk melanjutkan pembayaran.</p>
+                                <img src="./public/assets/Payment/QRCODE.png" alt="QRCODE" style="width: 200px; margin-top: 20px;">
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <div class="payment-header">
+                                <div class="header-left">
+                                    <img src="./public/assets/Payment/ShopeePay.png" alt="ShopeePay">
+                                    <span>ShopeePay</span>
+                                </div>
+                                <div class="header-right">
+                                    <input type="checkbox" class="payment-check">
+                                </div>
+                            </div>
+                            <div class="payment-body">
+                                <label for="shopeepay-id">Nomor Telepon ShopeePay</label>
+                                <input type="text" id="shopeepay-id" class="payment-input" placeholder="Masukkan nomor HP ShopeePay Anda">
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="checkout-right">
+                        <h3>ORDER SUMMARY</h3>
+                        
+                        <div class="order-item">
+                            <img src="./public/assets/Default.webp" alt="Preview Video" class="order-img">
+                            <h2 class="order-title">Judul Kursus</h2>
+                        </div>
+
+                        <div class="order-details">
+                            <div style="display: flex;">
+                                <p>Price:</p>
+                                <p style="margin-left: auto;">Rp 132.500</p>
+                            </div>
+                            <div style="display: flex; border-bottom: 2px solid #333333; padding-bottom: 10px; margin-bottom: 10px;">
+                                <p>Diskon:</p>
+                                <p style="margin-left: auto;">100%</p>
+                            </div>
+                            <div style="display: flex;">
+                                <h4>Total:</h4>
+                                <h4 style="margin-left: auto;">Gratis</h4>
+                            </div>
+                        </div>
+
+                        <div class="order-agree">
+                            <input type="checkbox" id="agree-checkbox" style="transform: scale(1.5); accent-color: #1369ff; cursor: pointer;">
+                            <label for="agree-checkbox" style="cursor: pointer;">Saya setuju dengan Kebijakan Privasi dan Ketentuan</label>
+                        </div>
+
+                        <button id="place-order" disabled>Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="./index.html" class="footer-logo"><img src="./public/assets/TrainityFullWhite.png" width="240px"></a>
+                <p class="footer-thanks">Terima kasih telah berkunjung ke situs kami. Saya harap anda mendapatkan manfaat dari website ini</p>
+            </div>
+
+            <div class="footer-center">
+                <nav class="footer-nav" id="footer-nav">
+                    <p>Halaman</p>
+                    <a href="./index.html">Home</a>
+                    <a href="./kursus.html">Kursus</a>
+                    <a href="./lainnya.html" id="footer-lainnya">Lainnya</a>
+                    <a href="./login.html" id="footer-login">Login</a>
+                    <a href="./signup.html" id="footer-signup">Sign Up</a>
+                </nav>
+            </div>
+
+            <div class="footer-right">
+                <h4>About Us</h4>
+                <p>Trainity, Platform belajar coding dengan tampilan yang modern dan intuitif. Bekerja sama bersama Profesional dengan tujuan menciptakan Programmer Indonesia yang lebih Kompetitif di Internasional</p>
+                
+                <h4 style="margin-top: 1rem;">Contact</h4>
+                <p>Email: <a href="mailto:lokaming86@gmail.com">lokaming86@gmail.com</a></p>
+                <p>Phone: <a href="https://wa.me/6283835360789">+62 838-3536-0789</a></p>
+                
+                <div class="footer-social">
+                    <a href="https://github.com/kaminglo" target="_blank"><i class="bx bxl-github"></i></a>
+                    <a href="https://instagram.com/kaminglo_" target="_blank"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://linkedin.com/in/kaming-lo" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://wa.me/6283835360789" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kaming. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./public/js/burger.js"></script>
+    <script src="./public/js/navbar.js"></script>
+    <script src="./public/js/footer.js"></script>
+    <script src="./public/js/joe/checkout.js"></script>
+</body>
+</html>
