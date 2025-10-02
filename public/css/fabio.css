@@ -114,3 +114,143 @@
 .btn-save:hover {
     background-color: var(--color-secondary);
 }
+
+/* CSS untuk halaman Sertifikat */
+
+/* Variabel Warna & Font Khusus Sertifikat */
+:root {
+    --sertifikat-primary-blue: #2563EB;
+    --sertifikat-secondary-blue: #3B82F6;
+    --sertifikat-dark-bg: #1A202C;
+    --sertifikat-text-light: #F7FAFC;
+    --sertifikat-text-muted: #CBD5E0;
+    --sertifikat-font: 'Poppins', sans-serif;
+}
+
+/* Reset dasar untuk halaman sertifikat */
+body.sertifikat-page {
+    margin: 0;
+    padding: 0;
+    font-family: var(--sertifikat-font);
+    background-color: #0d1117; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--sertifikat-text-light);
+}
+
+/* Wadah luar sertifikat, ukuran A4 landscape */
+.sertifikat-body {
+    width: 1123px;
+    height: 794px;
+    background-color: var(--sertifikat-dark-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kontainer dalam dengan border biru */
+.sertifikat-container-design {
+    width: calc(100% - 80px); 
+    height: calc(100% - 80px);
+    border: 3px solid var(--sertifikat-primary-blue);
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(26, 32, 44, 0.95);
+}
+
+.background-pattern {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.1) 0%, transparent 25%),
+        radial-gradient(circle at 90% 90%, rgba(37, 99, 235, 0.1) 0%, transparent 25%);
+    z-index: 1;
+}
+
+/* Header: Logo dan Judul */
+.header-sertifikat {
+    width: 100%;
+}
+.logo-sertifikat {
+    width: 150px;
+}
+.header-sertifikat p {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: var(--sertifikat-text-muted);
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* Konten Utama: Nama dan Judul Kursus */
+.content-sertifikat h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--sertifikat-text-muted);
+}
+.content-sertifikat h1#nama-peserta { 
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--sertifikat-secondary-blue);
+    margin: 10px 0 20px 0;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--sertifikat-primary-blue);
+    display: inline-block;
+}
+.kursus-desc {
+    font-size: 1.1rem;
+    color: var(--sertifikat-text-light);
+}
+.kursus-title#judul-kursus { 
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--sertifikat-primary-blue);
+    margin-top: 10px;
+}
+
+/* Footer: Tanda Tangan dan Info */
+.footer-sertifikat {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+.signature {
+    text-align: center;
+}
+.signature img#tanda-tangan { 
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+}
+.signature p#nama-instruktur { 
+    font-weight: 600;
+    margin: 5px 0 0 0;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--sertifikat-text-muted);
+}
+.signature span {
+    font-size: 0.9rem;
+    color: var(--sertifikat-text-muted);
+}
+.date-id {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--sertifikat-text-muted);
+}

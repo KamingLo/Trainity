@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Ambil data user dari localStorage
+    if (sessionStorage.getItem("authenticated") !== "true") {
+        window.location.href = "./login.html";
+        return;
+    }
+
     const userDataString = localStorage.getItem('loggedInUser');
 
-    // Periksa apakah datanya ada
     if (userDataString) {
         const user = JSON.parse(userDataString);
 
-        // Isi elemen-elemen di halaman profil dengan data tersebut
         const namaDiHeader = document.querySelector('.user-info h1');
         const emailDiHeader = document.querySelector('.user-info p');
         const inputNamaLengkap = document.getElementById('fullName');
@@ -17,12 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
         emailDiHeader.textContent = user.email;
         inputNamaLengkap.value = user.namaLengkap;
         inputEmail.value = user.email;
-
-    } else {
-        alert('Anda harus login terlebih dahulu untuk mengakses halaman ini!');
-        window.location.href = 'login.html';
     }
-
+    
     const settingsForm = document.getElementById('settingsForm');
     const newPasswordInput = document.getElementById('newPassword');
     const confirmPasswordInput = document.getElementById('confirmPassword');
@@ -35,12 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (newPasswordValue !== '' && newPasswordValue !== confirmPasswordValue) {
             alert('Password baru dan konfirmasi password tidak cocok!');
-            return; 
+            return;
         }
 
         alert('Pengaturan berhasil disimpan!');
+
         newPasswordInput.value = '';
         confirmPasswordInput.value = '';
     });
-
 });
