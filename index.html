@@ -3,9 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="./public/assets/TrainityMarkWhite.png">
+    <link rel="stylesheet" href="./public/css/default.css">
+    <link rel="stylesheet" href="./public/css/charless.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <title>Trainity | Solusi Belajar Koding Secara Online</title>
 </head>
+
 <body>
-    <script src="./public/js/login.js"></script>
+    <header class="header">
+        <nav style="display: flex;">
+            <div class="logo-navbar">
+                <a href="./index.html">
+                    <img class="logo-img" src="./public/assets/TrainityFullWhite.png" alt="Logo Trainity">
+                </a>
+            </div>
+            <div class="burger" id="burger">
+                <i class="bx bx-menu"></i>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./kursus.html" class="nav-link">Kursus</a>
+                <a href="./lainnya.html" class="nav-link" id="lainnya-link">Lainnya</a>
+                <a href="./login.html" class="btn-outline" id="login-link">Login</a>
+                <a href="./signup.html" class="btn-primary" id="signup-link">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="hero-section">
+            <div class="hero-left">
+                <h1>Belajar Gratis, Mudah Dipahami, Langsung Bisa Dipakai</h1>
+                <p>
+                    Akses kursus gratis dengan materi berkualitas tinggi, dirancang untuk membekali kamu keterampilan masa depan.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="./signup.html" class="btn-primary">Daftar</a>
+                    <a href="./kursus.html" class="btn-secondary">Jelajahi</a>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <img src="./public/assets/Web-Mockup.webp" alt="Hasil Kursus Trainity">
+            </div>
+        </section>
+
+
+        <section class="video-feature-section">
+            <div class="feature-visual">
+                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200" alt="Belajar melalui video">
+            </div>
+            <div class="feature-text">
+                <h2>Belajar Lebih Efektif Dengan Menggunakan Video</h2>
+                <ul>
+                    <li>
+                        <i class='bx bxs-videos'></i>
+                        <p>Akses <strong>100+ video</strong> yang telah dibuat untuk pemahaman konsep secara menyeluruh.</p>
+                    </li>
+                    <li>
+                        <i class='bx bxs-user-voice'></i>
+                        <p>Materi diajarkan oleh <strong>praktisi ahli</strong> di bidangnya, memastikan relevansi dengan kebutuhan industri.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section class="categories">
+            <h2 class="section-title">Kategori Kursus yang Kami Sediakan</h2>
+            <div class="category-container">
+                <div class="category-card">
+                    <i class='bx bx-code-alt'></i>
+                    <span>Front End Development</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class='bx bxs-server'></i>
+                    <span>Back End Development</span>
+                </div>
+
+                <div class="category-card">
+                    <i class='bx bx-layer'></i>
+                    <span>Framework & Library</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-courses">
+            <h2 class="section-title">Kursus Unggulan</h2>
+            <div class="courses-container">
+                <div class="course-card">
+                    <a href="#">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="HTML Course">
+                        <div class="course-content">
+                            <h3 class="course-title">HTML</h3>
+                            <p class="course-description">Pelajari struktur fundamental dari setiap halaman web dengan HyperText Markup Language.</p>
+                            <div class="course-info">
+                                <span class="course-level">Pemula</span>
+                                <span class="course-rating"><i class='bx bxs-star'></i> 4.9</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="course-card">
+                    <a href="#">
+                        <img src="https://images.unsplash.com/photo-1507721999472-8ed4421b43c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="CSS Course">
+                        <div class="course-content">
+                            <h3 class="course-title">CSS</h3>
+                            <p class="course-description">Hidupkan desain Anda dengan menata tampilan, layout, dan warna halaman web.</p>
+                            <div class="course-info">
+                                <span class="course-level">Pemula</span>
+                                <span class="course-rating"><i class='bx bxs-star'></i> 4.8</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="course-card">
+                    <a href="#">
+                        <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="Node JS Course">
+                        <div class="course-content">
+                            <h3 class="course-title">Node JS</h3>
+                            <p class="course-description">Jalankan JavaScript di sisi server untuk membangun aplikasi backend yang cepat.</p>
+                            <div class="course-info">
+                                <span class="course-level">Menengah</span>
+                                <span class="course-rating"><i class='bx bxs-star'></i> 4.2</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="course-card">
+                    <a href="#">
+                        <img src="https://images.unsplash.com/photo-1599423300746-b625ed8ba94a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="Laravel Course">
+                        <div class="course-content">
+                            <h3 class="course-title">Laravel</h3>
+                            <p class="course-description">Percepat pengembangan web PHP dengan framework yang elegan dan powerful.</p>
+                            <div class="course-info">
+                                <span class="course-level">Menengah</span>
+                                <span class="course-rating"><i class='bx bxs-star'></i> 4.5</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+        
+            <!-- LEFT -->
+            <div class="footer-left">
+                <a href="./index.html" class="footer-logo"><img src="./public/assets/TrainityFullWhite.png" width="240px"></a>
+                <p class="footer-thanks">Terima kasih telah berkunjung ke situs kami. Saya harap anda mendapatkan manfaat dari website ini</p>
+            </div>
+
+            <!-- CENTER -->
+            <div class="footer-center">
+                <nav class="footer-nav" id="footer-nav">
+                    <p>Halaman</p>
+                    <a href="./index.html">Home</a>
+                    <a href="./kursus.html">Kursus</a>
+                    <a href="./lainnya.html" id="footer-lainnya">Lainnya</a>
+                    <a href="./login.html" id="footer-login">Login</a>
+                    <a href="./signup.html" id="footer-signup">Sign Up</a>
+                </nav>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="footer-right">
+                <h4>About Us</h4>
+                <p>Trainity, Platform belajar coding dengan tampilan yang modern dan intuitif. Bekerja sama bersama Profesional dengan tujuan  menciptakan Programmer Indonesia yang lebih Kompetitif di Internasional</p>
+                
+                <h4 style="margin-top: 1rem;">Contact</h4>
+                <p>Email: <a href="mailto:lokaming86@gmail.com">lokaming86@gmail.com</a></p>
+                <p>Phone: <a href="https://wa.me/6283835360789">+62 838-3536-0789</a></p>
+            
+                <div class="footer-social">
+                    <a href="https://github.com/kaminglo" target="_blank"><i class="bx bxl-github"></i></a>
+                    <a href="https://instagram.com/kaminglo_" target="_blank"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://linkedin.com/in/kaming-lo" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://wa.me/6283835360789" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+                </div>
+            </div>
+      </div>
+
+        <!-- COPYRIGHT -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kaming. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./public/js/burger.js"></script>
+    <script src="./public/js/navbar.js"></script>
+    <script src="./public/js/footer.js"></script>
 </body>
 </html>
