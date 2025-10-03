@@ -40,6 +40,7 @@ if (isAuthenticated) {
         logout.addEventListener("click", (e) => {
             e.preventDefault();
             sessionStorage.removeItem("Authenticated");
+            window.location.href = "./login.html";
         });
 
     navbar.appendChild(dashboard);
