@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const showMessage = (element, message) => {
             errorMsg.style.display = 'none';
             successMsg.style.display = 'none';
+
             element.textContent = message;
             element.style.display = 'block';
             setTimeout(() => {
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const password = passwordInput.value.trim();
             
             if (!email || !password) {
-                showCustomAlert('Email dan password harus diisi.');
+                showMessage(errorMsg, 'Email dan password harus diisi.');
                 return;
             }
             
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             );
                 sessionStorage.setItem("Authenticated", "True");
                 showCustomAlert('Login berhasil! Mengarahkan ke dashboard...', true);
+                showMessage(successMsg, 'Berhasil masuk');
 
                 setTimeout(() => {
                     window.location.href = 'dashboard.html';
@@ -55,13 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 sessionStorage.setItem('loggedInUser', JSON.stringify(user));
                 sessionStorage.setItem("Authenticated", "True");
                 showCustomAlert('Login berhasil! Mengarahkan ke dashboard...', true);
+                showMessage(successMsg, 'Berhasil masuk');
 
                 setTimeout(() => {
                     window.location.href = 'dashboard.html';
                 }, 1500);
 
             } else {
-                    showCustomAlert('Email atau password salah.');
+                    showMessage(errorMsg, 'Email atau kata sandi tidak valid');
             }
         });
 

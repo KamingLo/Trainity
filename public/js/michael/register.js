@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const successMsg = registerForm.querySelector('#successMsg');
 
         const showMessage = (element, message) => {
-            if (!element) return; // Pastikan elemen pesan ada
+            if (!element) return;
             errorMsg.style.display = 'none';
             successMsg.style.display = 'none';
             element.textContent = message;
@@ -61,20 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (togglePassword) {
             const toggleBothPasswords = () => {
-                // Periksa status salah satu input password (misalnya yang pertama)
                 const isPassword = passwordInput.getAttribute('type') === 'password';
                 const newType = isPassword ? 'text' : 'password';
 
-                // Terapkan tipe baru ke kedua input password agar tetap sinkron
                 passwordInput.setAttribute('type', newType);
                 confirmPasswordInput.setAttribute('type', newType);
 
-                // Ganti kelas ikon hanya untuk tombol mata yang ada
                 togglePassword.classList.toggle('bx-hide', isPassword);
                 togglePassword.classList.toggle('bx-show', !isPassword);
             };
 
-            // Tambahkan event listener hanya ke tombol mata yang pertama
             togglePassword.addEventListener('click', toggleBothPasswords);
         }
     }
