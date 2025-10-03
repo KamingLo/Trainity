@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./public/css/default.css">
     <link rel="stylesheet" href="./public/css/charless.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <title>Dashboard Kursus - Trainity</title>
+    <title>Dashboard Kursus | Trainity</title>
 </head>
 
 <body>
@@ -18,15 +18,17 @@
                     <img class="logo-img" src="./public/assets/TrainityFullWhite.png" alt="Logo Trainity">
                 </a>
             </div>
+
             <div class="burger" id="burger">
                 <i class="bx bx-menu"></i>
             </div>
+
             <div class="nav-menu" id="nav-menu">
                 <a href="./index.html" class="nav-link">Home</a>
                 <a href="./kursus.html" class="nav-link">Kursus</a>
-                <a href="./dashboard.html" class="nav-link">Dashboard</a>
                 <a href="./lainnya.html" class="nav-link" id="lainnya-link">Lainnya</a>
-                <a href="./login.html" class="btn-outline" id="login-link">Logout</a>
+                <a href="./login.html" class="btn-outline" id="login-link">Login</a>
+                <a href="./signup.html" class="btn-primary" id="signup-link">Sign Up</a>
             </div>
         </nav>
     </header>
@@ -42,71 +44,18 @@
 
         <div class="tab-content">
             <section id="my-courses" class="tab-pane active">
-                <div class="course-list">
-                    <a href="#" class="course-item">
-                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" class="course-item-thumbnail">
-                        <div class="course-item-content">
-                            <h3>JavaScript Modern (ES6+)</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: 75%;"></div>
-                            </div>
-                            <span class="progress-text">75% Selesai</span>
-                            <div class="enrollment-date">
-                                <i class='bx bx-calendar'></i>
-                                <span>Terdaftar: 15 Agu 2025</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="course-item">
-                        <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" class="course-item-thumbnail">
-                        <div class="course-item-content">
-                            <h3>Node.js untuk Backend</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: 30%;"></div>
-                            </div>
-                            <span class="progress-text">30% Selesai</span>
-                            <div class="enrollment-date">
-                                <i class='bx bx-calendar'></i>
-                                <span>Terdaftar: 01 Sep 2025</span>
-                            </div>
-                        </div>
-                    </a>
-                                        <a href="#" class="course-item">
-                        <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" class="course-item-thumbnail">
-                        <div class="course-item-content">
-                            <h3>Node.js untuk Backend</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: 30%;"></div>
-                            </div>
-                            <span class="progress-text">30% Selesai</span>
-                            <div class="enrollment-date">
-                                <i class='bx bx-calendar'></i>
-                                <span>Terdaftar: 01 Sep 2025</span>
-                            </div>
-                        </div>
-                    </a>
-                    
-                </div>
+                <p class="tab-info">Daftar semua kursus yang sedang atau telah Anda ikuti. Lacak progres Anda dan lanjutkan pembelajaran.</p>
+                <div class="course-list" id="my-courses-list"></div>
             </section>
 
             <section id="saved-courses" class="tab-pane">
-                <div class="course-list">
-                    <a href="#" class="course-item">
-                        <img src="https://images.unsplash.com/photo-1599423300746-b625ed8ba94a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" class="course-item-thumbnail">
-                        <div class="course-item-content">
-                            <h3>Belajar Laravel dari Dasar</h3>
-                            <div class="enrollment-date">
-                                <i class='bx bx-bookmark'></i>
-                                <span>Disimpan pada 22 Sep 2025</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                <p class="tab-info">Kursus yang Anda simpan akan muncul di sini. Simpan kursus yang menarik untuk dibeli dan dipelajari di lain waktu.</p>
+                <div class="course-list" id="saved-courses-list"></div>
             </section>
         </div>
     </main>
     
-    <footer class="footer">
+        <footer class="footer">
         <div class="footer-container">
         
             <!-- LEFT -->
@@ -147,13 +96,14 @@
 
         <!-- COPYRIGHT -->
         <div class="footer-bottom">
-            <p>&copy; 2025 Kaming. All rights reserved.</p>
+            <p>&copy; 2025 Trainity. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="./public/js/burger.js"></script>
     <script src="./public/js/navbar.js"></script>
     <script src="./public/js/footer.js"></script>
-    <script src="./public/js/charless/dashboard.js"></script>
+    <script src="./public/js/charless/tabDashboard.js"></script>
+    <script src="./public/js/charless/kursusDashboard.js"></script>
 </body>
 </html>
