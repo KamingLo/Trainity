@@ -1,70 +1,82 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    if (sessionStorage.getItem("authenticated") !== "true") {
+    if (sessionStorage.getItem("Authenticated") !== "True") {
         window.location.href = "./login.html";
         return;
     }
-    
-    /* CATATAN PENTING:
-    Kode di bawah ini mengasumsikan bahwa di halaman login/kursus,
-    teman Anda sudah menyimpan data sertifikat ke sessionStorage seperti ini:
 
-    const sertifikatInfo = {
-        namaPeserta: "Fabio",
-        judulKursus: "Dasar-Dasar HTML & CSS",
-        namaInstruktur: "Kaming Lo",
-        tandaTanganUrl: "https://via.placeholder.com/150x50/FFFFFF/000000?text=K.Lo",
-        tanggalLulus: "02 Oktober 2025",
-        sertifikatId: "TRN-HTML-54321"
-    };
-    sessionStorage.setItem('sertifikatDetail', JSON.stringify(sertifikatInfo));
-    */
+    const urlParams = new URLSearchParams(window.location.search);
+    const judulKursus = urlParams.get('key') || "Nama Kursus";
 
-    const dataString = sessionStorage.getItem('sertifikatDetail');
-    if (dataString) {
-        const data = JSON.parse(dataString);
-
-        document.getElementById('nama-peserta').textContent = data.namaPeserta;
-        document.getElementById('judul-kursus').textContent = data.judulKursus;
-        document.getElementById('nama-instruktur').textContent = data.namaInstruktur;
-        document.getElementById('tanda-tangan').src = data.tandaTanganUrl;
-        document.getElementById('tanggal-lulus').textContent = `Tanggal Kelulusan: ${data.tanggalLulus}`;
-        document.getElementById('sertifikat-id').textContent = `ID Sertifikat: ${data.sertifikatId}`;
-    } else {
-        document.getElementById('nama-peserta').textContent = "DATA TIDAK DITEMUKAN";
-        document.getElementById('judul-kursus').textContent = "Silakan kembali ke halaman kursus.";
+    const userDataString = sessionStorage.getItem('loggedInUser');
+    let namaPeserta = "[Nama Peserta]";
+    if (userDataString) {
+        const user = JSON.parse(userDataString);
+        namaPeserta = user.username;
     }
 
-    const downloadBtn = document.getElementById('downloadBtn');
-    const sertifikatElement = document.getElementById('sertifikat-body');
+    const namaInstruktur = "Fabio";
+    const tandaTanganUrl = "./public/assets/Signature.png";
+    
+    const tanggalLulus = new Date().toLocaleDateString('id-ID', {
+        day: 'numeric', month: 'long', year: 'numeric'
+    });
 
+    const randomIdPart = Math.floor(10000 + Math.random() * 90000);
+    const sertifikatId = `TRN-${judulKursus.toUpperCase().substring(0,4)}-${randomIdPart}`;
+    const sertifikatContainer = document.getElementById('sertifikat-body');
+
+    const sertifikatInnerHTML = `
+        <div class="sertifikat-container-design">
+            <div class="header-sertifikat">
+                <img src="./public/assets/TrainityFullWhite.png" alt="Logo Trainity" class="logo-sertifikat">
+                <p>CERTIFICATE OF COMPLETION</p>
+            </div>
+            <div class="content-sertifikat">
+                <h2>INI DIBERIKAN KEPADA</h2>
+                <h1 id="nama-peserta">${namaPeserta}</h1>
+                <p class="kursus-desc">Atas keberhasilannya menyelesaikan kursus:</p>
+                <p class="kursus-title" id="judul-kursus">${judulKursus}</p>
+            </div>
+            <div class="footer-sertifikat">
+                <div class="signature">
+                    <img id="tanda-tangan" src="${tandaTanganUrl}" alt="Tanda Tangan Instruktur">
+                    <p id="nama-instruktur">${namaInstruktur}</p>
+                    <span>Instruktur Utama Trainity</span>
+                </div>
+                <div class="date-id">
+                    <p id="tanggal-lulus">Tanggal Kelulusan: ${tanggalLulus}</p>
+                    <p id="sertifikat-id">ID Sertifikat: ${sertifikatId}</p>
+                </div>
+            </div>
+            <div class="background-pattern"></div>
+        </div>
+    `;
+
+    sertifikatContainer.innerHTML = sertifikatInnerHTML;
+
+    const downloadBtn = document.getElementById('downloadBtn');
     downloadBtn.addEventListener('click', function() {
         downloadBtn.textContent = 'Memproses...';
         downloadBtn.disabled = true;
 
-        // Gunakan html2canvas untuk "memfoto" elemen sertifikat
-        html2canvas(sertifikatElement, { scale: 2 }).then(canvas => {
-            // Dapatkan data gambar dari hasil "foto"
+        html2canvas(sertifikatContainer, { scale: 2 }).then(canvas => {
             const imageData = canvas.toDataURL('image/png');
-            
-            // Siapkan library jsPDF
             const { jsPDF } = window.jspdf;
             
-            // Buat dokumen PDF dengan ukuran sama persis seperti elemen sertifikat
             const doc = new jsPDF({
                 orientation: 'landscape',
                 unit: 'px',
-                format: [sertifikatElement.offsetWidth, sertifikatElement.offsetHeight]
+                format: [sertifikatContainer.offsetWidth, sertifikatContainer.offsetHeight]
             });
 
-            // Tambahkan gambar ke PDF dan simpan
-            doc.addImage(imageData, 'PNG', 0, 0, sertifikatElement.offsetWidth, sertifikatElement.offsetHeight);
-            const namaFile = `Sertifikat-${document.getElementById('judul-kursus').textContent.trim()}.pdf`;
+            doc.addImage(imageData, 'PNG', 0, 0, sertifikatContainer.offsetWidth, sertifikatContainer.offsetHeight);
+            const namaFile = `Sertifikat-${judulKursus.trim()}.pdf`;
             doc.save(namaFile);
 
-            // Kembalikan tombol ke keadaan semula
             downloadBtn.innerHTML = "<i class='bx bxs-download'></i> Unduh PDF";
             downloadBtn.disabled = false;
         });
     });
 });
+

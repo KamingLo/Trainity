@@ -18,7 +18,6 @@
     box-shadow: 0 0 30px 1px #8A2BE2;
 }
 
-/* Bagian Header Profil */
 .profile-header {
     display: flex;
     align-items: center;
@@ -45,7 +44,6 @@
     color: var(--color-gray-400);
 }
 
-/* Bagian Form Pengaturan */
 .settings-form h2 {
     font-size: var(--font-size-xl);
     margin-bottom: var(--spacing-6);
@@ -116,8 +114,6 @@
 }
 
 /* CSS untuk halaman Sertifikat */
-
-/* Variabel Warna & Font Khusus Sertifikat */
 :root {
     --sertifikat-primary-blue: #2563EB;
     --sertifikat-secondary-blue: #3B82F6;
@@ -127,7 +123,6 @@
     --sertifikat-font: 'Poppins', sans-serif;
 }
 
-/* Reset dasar untuk halaman sertifikat */
 body.sertifikat-page {
     margin: 0;
     padding: 0;
@@ -140,7 +135,6 @@ body.sertifikat-page {
     color: var(--sertifikat-text-light);
 }
 
-/* Wadah luar sertifikat, ukuran A4 landscape */
 .sertifikat-body {
     width: 1123px;
     height: 794px;
@@ -154,7 +148,6 @@ body.sertifikat-page {
     align-items: center;
 }
 
-/* Kontainer dalam dengan border biru */
 .sertifikat-container-design {
     width: calc(100% - 80px); 
     height: calc(100% - 80px);
@@ -182,13 +175,14 @@ body.sertifikat-page {
     z-index: 1;
 }
 
-/* Header: Logo dan Judul */
 .header-sertifikat {
     width: 100%;
 }
+
 .logo-sertifikat {
     width: 150px;
 }
+
 .header-sertifikat p {
     font-size: 1.2rem;
     letter-spacing: 3px;
@@ -197,12 +191,12 @@ body.sertifikat-page {
     margin-top: 15px;
 }
 
-/* Konten Utama: Nama dan Judul Kursus */
 .content-sertifikat h2 {
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--sertifikat-text-muted);
 }
+
 .content-sertifikat h1#nama-peserta { 
     font-size: 3.5rem;
     font-weight: 700;
@@ -213,10 +207,12 @@ body.sertifikat-page {
     border-bottom: 2px solid var(--sertifikat-primary-blue);
     display: inline-block;
 }
+
 .kursus-desc {
     font-size: 1.1rem;
     color: var(--sertifikat-text-light);
 }
+
 .kursus-title#judul-kursus { 
     font-size: 2.2rem;
     font-weight: 600;
@@ -224,31 +220,35 @@ body.sertifikat-page {
     margin-top: 10px;
 }
 
-/* Footer: Tanda Tangan dan Info */
 .footer-sertifikat {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
 }
+
 .signature {
     text-align: center;
 }
+
 .signature img#tanda-tangan { 
     width: 150px;
     height: 50px;
     object-fit: contain;
 }
+
 .signature p#nama-instruktur { 
     font-weight: 600;
     margin: 5px 0 0 0;
     padding-bottom: 2px;
     border-bottom: 1px solid var(--sertifikat-text-muted);
 }
+
 .signature span {
     font-size: 0.9rem;
     color: var(--sertifikat-text-muted);
 }
+
 .date-id {
     text-align: right;
     font-size: 0.9rem;
