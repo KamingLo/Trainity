@@ -7,7 +7,7 @@ function renderCarousel(data, key){
     console.log(data);
     certificate.innerHTML = `
             <div class="carousel-body" data-link="certificate">
-                <img src="https://img.youtube.com/vi/${data.videos[0].link}/hqdefault.jpg">
+                <img src="./public/assets/Serti.png">
                 <h3>Ambil Sertifikat ${key}</h3>
                 <a class="btn-link" href="sertifikat.html?key=${key}">Klik disini</a>
             </div>
