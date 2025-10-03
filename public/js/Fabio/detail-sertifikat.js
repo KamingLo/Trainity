@@ -1,10 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    if (sessionStorage.getItem("Authenticated") !== "True") {
-        window.location.href = "./login.html";
-        return;
-    }
-
     const urlParams = new URLSearchParams(window.location.search);
     const judulKursus = urlParams.get('key') || "Nama Kursus";
 
