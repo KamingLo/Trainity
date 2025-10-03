@@ -2,22 +2,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.querySelector('.form-box form');
 
     if (loginForm) {
-        const usernameInput = loginForm.querySelector('#username');
+        const emailInput = loginForm.querySelector('#email');  
         const passwordInput = loginForm.querySelector('#password-input');
         const togglePassword = loginForm.querySelector('#togglePassword');
+
+        const errorMsg = loginForm.querySelector('#errorMsg');
+        const successMsg = loginForm.querySelector('#successMsg');
+
+        const showMessage = (element, message) => {
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
+            element.textContent = message;
+            element.style.display = 'block';
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 3000);
+        };
 
         loginForm.addEventListener('submit', function(event) {
             event.preventDefault();
 
-            const username = usernameInput.value.trim();
+            const email = emailInput.value.trim();
             const password = passwordInput.value.trim();
             
-            if (!username || !password) {
-                showCustomAlert('Username dan password harus diisi.');
+            if (!email || !password) {
+                showCustomAlert('Email dan password harus diisi.');
                 return;
             }
             
-            if (username == "admin@trainity.com" && password === "admin123") {
+            if (email == "admin@trainity.com" && password === "admin123") {
                 sessionStorage.setItem('loggedInUser',JSON.stringify({
                     "username": "Admin Trainity",
                     "email": "admin@trainity.com",
@@ -35,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const users = JSON.parse(localStorage.getItem('users')) || [];
 
-            const user = users.find(u => u.username === username);
+            const user = users.find(u => u.email === email);
 
             if (user && user.password === password) {
                 
@@ -48,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 1500);
 
             } else {
-                    showCustomAlert('Username atau password salah.');
+                    showCustomAlert('Email atau password salah.');
             }
         });
 

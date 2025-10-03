@@ -5,7 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const usernameInput = registerForm.querySelector('#username');
         const emailInput = registerForm.querySelector('#email');
         const passwordInput = registerForm.querySelector('#password-input');
+        const confirmPasswordInput = registerForm.querySelector('#confirm-password-input'); 
         const togglePassword = registerForm.querySelector('#togglePassword');
+        
+        const errorMsg = registerForm.querySelector('#errorMsg');
+        const successMsg = registerForm.querySelector('#successMsg');
+
+        const showMessage = (element, message) => {
+            if (!element) return; // Pastikan elemen pesan ada
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
+            element.textContent = message;
+            element.style.display = 'block';
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 3000);
+        };
 
         registerForm.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -13,9 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const username = usernameInput.value.trim();
             const email = emailInput.value.trim();
             const password = passwordInput.value.trim();
+            const confirmPassword = confirmPasswordInput.value.trim();
 
             if (!username || !email || !password) {
                 showCustomAlert('Mohon lengkapi semua kolom pendaftaran.');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                showCustomAlert('Password tidak cocok.');
                 return;
             }
 
@@ -39,12 +60,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (togglePassword) {
-            togglePassword.addEventListener('click', function() {
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
-                this.classList.toggle('bx-show');
-                this.classList.toggle('bx-hide');
-            });
+            const toggleBothPasswords = () => {
+                // Periksa status salah satu input password (misalnya yang pertama)
+                const isPassword = passwordInput.getAttribute('type') === 'password';
+                const newType = isPassword ? 'text' : 'password';
+
+                // Terapkan tipe baru ke kedua input password agar tetap sinkron
+                passwordInput.setAttribute('type', newType);
+                confirmPasswordInput.setAttribute('type', newType);
+
+                // Ganti kelas ikon hanya untuk tombol mata yang ada
+                togglePassword.classList.toggle('bx-hide', isPassword);
+                togglePassword.classList.toggle('bx-show', !isPassword);
+            };
+
+            // Tambahkan event listener hanya ke tombol mata yang pertama
+            togglePassword.addEventListener('click', toggleBothPasswords);
         }
     }
 });
