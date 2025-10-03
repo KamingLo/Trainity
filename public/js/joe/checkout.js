@@ -18,6 +18,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let activeMethod = null;
 
+    function showPopup(contentHtml, redirectTo = null, delay = 2000) {
+        let popup = document.getElementById("order-popup");
+        if (!popup) {
+            popup = document.createElement("div");
+            popup.id = "order-popup";
+            popup.className = "order-popup";
+            popup.innerHTML = `<div class="popout"></div>`;
+            document.body.appendChild(popup);
+        }
+
+        const popupContent = popup.querySelector(".popout");
+        popup.style.display = "flex";
+
+        popupContent.innerHTML = `
+            <div class="anim"></div>
+            <p>Pembelian anda sedang diproses</p>
+        `;
+
+        setTimeout(() => {
+            popupContent.innerHTML = contentHtml;
+
+            if (redirectTo) {
+                document.getElementById("popupRedirect").addEventListener("click", () => {
+                    window.location.href = redirectTo;
+                });
+            }
+        }, delay);
+    }
+
     methods.forEach(method => {
         const checkbox = method.querySelector(".payment-check");
         const body = method.querySelector(".payment-body");
@@ -100,6 +129,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const kursusKey = params.get("key");
 
+    if (!kursusKey) {
+        setTimeout(() => {
+            loadingScreen.classList.add("fade-out");
+            setTimeout(() => {
+                loadingScreen.style.display = "none";
+                showPopup(`
+                    <div style="font-size: 64px; color: orange; margin-bottom: 20px;">⚠</div>
+                    <h2>Akses Ditolak!</h2>
+                    <p>Silakan pilih kursus terlebih dahulu</p>
+                    <button id="popupRedirect" style="
+                        margin-top: 20px; 
+                        padding: 10px 20px; 
+                        border: none; 
+                        border-radius: 6px; 
+                        background: #1369ff; 
+                        color: white; 
+                        cursor: pointer;
+                        z-index: 99999;
+                    ">
+                        Pergi ke Kursus
+                    </button>
+                `, "kursus.html", 0);
+            }, 500);
+        }, 1000);
+        return;
+    }
+
     if (kursusKey) {
         fetch("./db/database.json")
             .then(res => res.json())
@@ -143,64 +199,79 @@ document.addEventListener("DOMContentLoaded", () => {
                     }, 500);
                 }, 1500);
             });
-    } else {
-        loadingScreen.style.display = "none";
-        checkoutContent.style.visibility = "visible";
-        checkoutContent.style.opacity = "1";
+    }
+
+    const STORAGE_KEY = "ourses_order";
+
+    function tambahKursus(user, kursusBaru) {
+        let data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        let existingUser = data.find(u => u.user === user);
+
+        if (existingUser) {
+            if (existingUser.kursus.includes(kursusBaru)) {
+                showPopup(`
+                    <div style="font-size: 64px; color: red; margin-bottom: 20px;">⚠</div>
+                    <h2>Oops!</h2>
+                    <p>Anda sudah membeli produk ini</p>
+                    <button id="popupRedirect" style="
+                        margin-top: 20px; 
+                        padding: 10px 20px; 
+                        border: none; 
+                        border-radius: 6px; 
+                        background: #1369ff; 
+                        color: white; 
+                        cursor: pointer;
+                        z-index: 99999;
+                    ">
+                        Kembali ke Kursus
+                    </button>
+                `, "kursus.html");
+                return false;
+            } else {
+                existingUser.kursus.push(kursusBaru);
+            }
+        } else {
+            data.push({
+                user: user,
+                kursus: [kursusBaru]
+            });
+        }
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        return true;
     }
 
     placeOrderBtn.addEventListener("click", (e) => {
         e.preventDefault();
 
-        let popup = document.getElementById("order-popup");
-        if (!popup) {
-            popup = document.createElement("div");
-            popup.id = "order-popup";
-            popup.className = "order-popup";
-            popup.innerHTML = `<div class="popout"></div>`;
-            document.body.appendChild(popup);
+        const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+        const currentUser = loggedInUser ? loggedInUser.username : null;
+
+        if (!sessionStorage.getItem("Authenticated") || !currentUser) {
+            alert("Silakan login terlebih dahulu!");
+            return;
         }
 
-        const popupContent = popup.querySelector(".popout");
-        popup.style.display = "flex";
+        const success = tambahKursus(currentUser, kursusKey);
+        if (!success) return;
 
-        popupContent.innerHTML = `
-            <div class="anim"></div>
-            <p>Pembelian anda sedang diproses</p>
-        `;
+        loadingScreen.classList.add("fade-out");
 
-        setTimeout(() => {
-            const style = document.createElement("style");
-            style.textContent = `
-            #backToKursus {
-                transition: background 0.3s ease;
-            }
-            #backToKursus:hover {
-                background: #0f4ecf !important;
-            }
-            `;
-            document.head.appendChild(style);
-
-            popupContent.innerHTML = `
-                <div style="font-size: 64px; color: limegreen; margin-bottom: 20px;">✓</div>
-                <h2>Pembelian Berhasil!</h2>
-                <button id="backToKursus" style="
-                    margin-top: 20px; 
-                    padding: 10px 20px; 
-                    border: none; 
-                    border-radius: 6px; 
-                    background: #1369ff; 
-                    color: white; 
-                    cursor: pointer;
-                    z-index: 99999;
-                ">
-                    Kembali ke Kursus
-                </button>
-            `;
-
-            document.getElementById("backToKursus").addEventListener("click", () => {
-                window.location.href = "kursus.html";
-            });
-        }, 2000);
+        showPopup(`
+            <div style="font-size: 64px; color: limegreen; margin-bottom: 20px;">✓</div>
+            <h2>Pembelian Berhasil!</h2>
+            <button id="popupRedirect" style="
+                margin-top: 20px; 
+                padding: 10px 20px; 
+                border: none; 
+                border-radius: 6px; 
+                background: #1369ff; 
+                color: white; 
+                cursor: pointer;
+                z-index: 99999;
+            ">
+                Kembali ke Dashboard
+            </button>
+        `, "dashboard.html");
     });
 });
