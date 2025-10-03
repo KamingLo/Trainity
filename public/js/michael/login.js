@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
             );
                 sessionStorage.setItem("Authenticated", "True");
-                showCustomAlert('Login berhasil! Mengarahkan ke dashboard...', true);
                 showMessage(successMsg, 'Berhasil masuk');
 
                 setTimeout(() => {
@@ -56,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 sessionStorage.setItem('loggedInUser', JSON.stringify(user));
                 sessionStorage.setItem("Authenticated", "True");
-                showCustomAlert('Login berhasil! Mengarahkan ke dashboard...', true);
                 showMessage(successMsg, 'Berhasil masuk');
 
                 setTimeout(() => {
@@ -78,20 +76,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
-function showCustomAlert(message, isSuccess = false) {
-    const alertContainer = document.getElementById('custom-alert-container');
-    if (!alertContainer) return;
-
-    const alert = document.createElement('div');
-    alert.className = `custom-alert ${isSuccess ? 'success' : 'error'}`;
-    alert.textContent = message;
-
-    alertContainer.appendChild(alert);
-
-    setTimeout(() => {
-        alert.remove();
-    }, 3000);
-}
    
 

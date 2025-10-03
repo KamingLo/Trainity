@@ -30,13 +30,27 @@ document.addEventListener('DOMContentLoaded', function() {
             const password = passwordInput.value.trim();
             const confirmPassword = confirmPasswordInput.value.trim();
 
-            if (!username || !email || !password) {
-                showCustomAlert('Mohon lengkapi semua kolom pendaftaran.');
+            if (!username || username.length < 3 || !/^[a-zA-Z0-9_]+$/.test(username)) {
+                showMessage(errorMsg, 'Username minimal 3 karakter dan hanya boleh huruf/angka.');
+                return;
+            }
+
+            // Validasi email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showMessage(errorMsg,'Format email tidak valid.');
+                return;
+            }
+
+            // Validasi password
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+            if (!passwordPattern.test(password)) {
+                showMessage(errorMsg,'Password minimal 8 karakter, harus ada huruf besar, huruf kecil, angka, dan simbol.');
                 return;
             }
 
             if (password !== confirmPassword) {
-                showCustomAlert('Password tidak cocok.');
+                showMessage(errorMsg, 'Password tidak cocok.');
                 return;
             }
 
@@ -45,13 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const userExists = users.some(user => user.username === username || user.email === email);
 
             if (userExists) {
-                showCustomAlert('Username atau email sudah terdaftar.');
+                showMessage(errormsg,'Username atau email sudah digunakan.');
             } else {
                 users.push({ username, email, password });
                 
                 localStorage.setItem('users', JSON.stringify(users));
                 
-                showCustomAlert('Registrasi berhasil! Anda akan diarahkan ke halaman login.', true);
+                showMessage(successMsg,'Registrasi berhasil! Anda akan diarahkan ke halaman login.');
                 
                 setTimeout(() => {
                     window.location.href = 'login.html';
@@ -75,18 +89,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
-function showCustomAlert(message, isSuccess = false) {
-    const alertContainer = document.getElementById('custom-alert-container');
-    if (!alertContainer) return;
-
-    const alert = document.createElement('div');
-    alert.className = `custom-alert ${isSuccess ? 'success' : 'error'}`;
-    alert.textContent = message;
-
-    alertContainer.appendChild(alert);
-
-    setTimeout(() => {
-        alert.remove();
-    }, 3000);
-}

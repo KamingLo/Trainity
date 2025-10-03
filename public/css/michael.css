@@ -51,16 +51,6 @@
 
 }
 
-/* .error-msg, .success-msg {
-    text-align: center;
-    margin-bottom: 1rem;
-    font-weight: 500;
-    padding: 10px;
-    border-radius: 5px;
-} */
-
-
-
 .input-box {
     position: relative;
     margin-bottom: var(--spacing-4);
@@ -140,6 +130,7 @@
     text-decoration: none;
     transition: var(--transition-base);
 }
+
 .toggle-box-visual {
     display: flex;
     flex-direction: column;
@@ -150,47 +141,18 @@
     color: var(--color-white);
 }
 
-.toggle-box-visual h1 {
-    font-size: var(--font-size-4xl);
-    font-weight: 800;
-    margin-bottom: var(--spacing-4);
-}
-
-.toggle-box-visual p {
-    font-size: var(--font-size-base);
-    color: var(--color-gray-200);
+.toggle-box-visual img {
     max-width: 300px;
-    margin: 0 auto;
-}
-
-.toggle-box-visual .btn {
-    display: inline-block;
-    margin-top: var(--spacing-6);
-    background: transparent;
-    border: 2px solid var(--color-white);
-    padding: var(--spacing-2) var(--spacing-6);
-    border-radius: 50px;
-    color: var(--color-white);
-    font-size: var(--font-size-base);
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition-base);
-}
-
-.toggle-box-visual .btn:hover {
-    background: var(--color-white);
-    color: var(--color-accent);
+    height: auto;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
 }
 
 .auth-container--login {
-    background-image: url('../assets/background-login.jpg');
-    background-size: cover;
-    background-position: center;
+    background: #02021a;
 }
 .auth-container--register {
-   background-image: url('../assets/background-register.jpg');
-    background-size: cover;
-    background-position: center;
+    background: #02021a;
 }
 
 /* --- Media Queries --- */
@@ -204,7 +166,14 @@
         padding: var(--spacing-8);
     }
     .auth-container--login {
-        background: none ;
+        background:  #02021a;
     }
+
+    .auth-container--register {
+    background: #02021a;
+}
     
+    .toggle-box-visual img {
+        display: none;
+}
 }
