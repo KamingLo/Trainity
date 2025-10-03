@@ -10,9 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="sertifikat-page">
-    <div class="sertifikat-body" id="sertifikat-body">
+    <div class="sertifikat-wrapper">
+        <div class="sertifikat-body" id="sertifikat-body">
+        </div>
+        
+        <div class="download-action">
+            <button id="downloadBtn" class="download-btn">
+                <i class='bx bxs-download'></i> Unduh PDF
+            </button>
+        </div>
     </div>
 
 </body>
-    <script src="./public/js/Fabio/detail-sertifikat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./public/js/Fabio/detail-sertifikat.js" defer></script>
 </html>

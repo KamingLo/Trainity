@@ -1,5 +1,4 @@
 /* CSS untuk profile.html */
-
 .profile-page-container {
     display: flex;
     justify-content: center;
@@ -31,6 +30,10 @@
     border-radius: 50%;
     border: 2px solid var(--color-gray-700);
     object-fit: cover;
+}
+
+.avatar-container:hover .avatar-overlay {
+    opacity: 1 !important;
 }
 
 .user-info h1 {
@@ -111,6 +114,73 @@
 
 .btn-save:hover {
     background-color: var(--color-secondary);
+}
+
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid #4CAF50;
+    z-index: 10000;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.custom-alert.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.custom-alert.error {
+    border-left-color: #f44336;
+}
+
+.custom-alert.success {
+    border-left-color: #4CAF50;
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-content i {
+    font-size: 1.5rem;
+}
+
+.alert-content i.bx-check-circle {
+    color: #4CAF50;
+}
+
+.alert-content i.bx-error-circle {
+    color: #f44336;
+}
+
+.alert-content span {
+    color: #333;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .custom-alert {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        transform: translateY(-100px);
+    }
+    
+    .custom-alert.show {
+        transform: translateY(0);
+    }
 }
 
 /* CSS untuk halaman Sertifikat */
@@ -233,7 +303,7 @@ body.sertifikat-page {
 
 .signature img#tanda-tangan { 
     width: 150px;
-    height: 50px;
+    height: 80px;
     object-fit: contain;
 }
 
@@ -253,4 +323,99 @@ body.sertifikat-page {
     text-align: right;
     font-size: 0.9rem;
     color: var(--sertifikat-text-muted);
+}
+
+.sertifikat-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.download-action {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, var(--sertifikat-primary-blue), var(--sertifikat-secondary-blue));
+    color: var(--sertifikat-text-light);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 200px;
+    justify-content: center;
+    font-family: var(--sertifikat-font);
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, var(--sertifikat-secondary-blue), var(--sertifikat-primary-blue));
+}
+
+.download-btn:disabled {
+    background: #4A5568;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.download-btn i {
+    font-size: 1.3rem;
+}
+
+.bx-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 1200px) {
+    .sertifikat-body {
+        width: 95%;
+        height: auto;
+        aspect-ratio: 1123 / 794;
+        max-width: 1123px;
+    }
+    
+    .sertifikat-container-design {
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sertifikat-wrapper {
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .download-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+        min-width: 180px;
+    }
+    
+    .content-sertifikat h1#nama-peserta {
+        font-size: 2.5rem;
+    }
+    
+    .kursus-title#judul-kursus {
+        font-size: 1.8rem;
+    }
 }

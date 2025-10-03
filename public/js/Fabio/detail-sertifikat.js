@@ -53,28 +53,41 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
 
-    sertifikatContainer.innerHTML = sertifikatInnerHTML;
+     sertifikatContainer.innerHTML = sertifikatInnerHTML;
 
     const downloadBtn = document.getElementById('downloadBtn');
     downloadBtn.addEventListener('click', function() {
-        downloadBtn.textContent = 'Memproses...';
+        const originalContent = downloadBtn.innerHTML;
+        downloadBtn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Memproses...';
         downloadBtn.disabled = true;
 
-        html2canvas(sertifikatContainer, { scale: 2 }).then(canvas => {
+        html2canvas(sertifikatContainer, { 
+            scale: 2,
+            useCORS: true,
+            logging: false
+        }).then(canvas => {
             const imageData = canvas.toDataURL('image/png');
             const { jsPDF } = window.jspdf;
+
+            const pdfWidth = canvas.width;
+            const pdfHeight = canvas.height;
             
             const doc = new jsPDF({
-                orientation: 'landscape',
+                orientation: pdfWidth > pdfHeight ? 'landscape' : 'portrait',
                 unit: 'px',
-                format: [sertifikatContainer.offsetWidth, sertifikatContainer.offsetHeight]
+                format: [pdfWidth, pdfHeight]
             });
 
-            doc.addImage(imageData, 'PNG', 0, 0, sertifikatContainer.offsetWidth, sertifikatContainer.offsetHeight);
-            const namaFile = `Sertifikat-${judulKursus.trim()}.pdf`;
+            doc.addImage(imageData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            const namaFile = `Sertifikat-${judulKursus.replace(/\s+/g, '_')}.pdf`;
             doc.save(namaFile);
 
-            downloadBtn.innerHTML = "<i class='bx bxs-download'></i> Unduh PDF";
+            downloadBtn.innerHTML = originalContent;
+            downloadBtn.disabled = false;
+        }).catch(error => {
+            console.error('Error generating PDF:', error);
+            alert('Terjadi error saat mengunduh sertifikat. Silakan coba lagi.');
+            downloadBtn.innerHTML = originalContent;
             downloadBtn.disabled = false;
         });
     });
