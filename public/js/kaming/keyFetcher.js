@@ -7,7 +7,7 @@ if(key !== null){
     fetch("./db/database.json")
     .then(res => res.json())
     .then(data => {
-        renderCarousel(data[key]);
+        renderCarousel(data[key], key);
     })
     .catch(err => console.error("Error fetching data:", err));
 }
