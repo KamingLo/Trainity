@@ -25,7 +25,7 @@
     --font-size-xl: 1.25rem;
     --font-size-2xl: 1.5rem;
     --font-size-3xl: 1.875rem;
-    --font-size-4xl: 2.25rem;
+    --font-size-4xl: 2.5rem;
 
     --spacing-1: 0.25rem;
     --spacing-2: 0.5rem;
@@ -36,6 +36,8 @@
     --spacing-8: 2rem;
     --spacing-12: 3rem;
     --spacing-16: 4rem;
+    --spacing-32: 8rem;
+    --spacing-48: 12rem;
 
     --radius-sm: 0.25rem;
     --radius-md: 0.375rem;
@@ -63,7 +65,6 @@ body {
     font-family: var(--font-family);
     background-color: var(--color-background);
     color: #fff;
-    /* Menambahkan motif dot grid sebagai background */
     background-image: radial-gradient(var(--color-gray-800) 1px, transparent 1px);
     background-size: 25px 25px;
 }
@@ -96,7 +97,7 @@ nav {
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  color: white; /* sesuaikan warna */
+  color: white;
 }
 
 .nav-menu {
@@ -282,7 +283,6 @@ nav {
       z-index: 1000;
     }
 
-    /* Default hidden di tablet/mobile */
     .nav-menu {
       display: none;
     }
@@ -296,10 +296,8 @@ nav {
     }
 
     .footer-right p {
-        width:100%; /* biar nggak kepanjangan */
+        width:100%;
     }
-
-    /* Aturan yang sudah dipindahkan ke default tidak perlu di sini lagi */
 
     .form-box {
         padding: var(--spacing-8);

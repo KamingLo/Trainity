@@ -1,10 +1,23 @@
+const container = document.getElementById("content");
+
 function renderCards(data) {
-    const container = document.getElementById("content");
     container.innerHTML = "";
     container.classList = "cards";
 
     Object.keys(data).forEach(key => {
         const section = data[key];
+        let button;
+        let order = localStorage.getItem("courses_order");
+        if(order && sessionStorage.getItem("Authenticated") === "True") {
+            for(let obj of JSON.parse(order)){
+                if(obj.kursus.includes(key)){
+                    button = `<p class="blocked">Kamu sudah punya kursus ini</p>`;
+                } else{
+                    button = `<a href="./checkout.html?key=${key}">Beli Kursus</a>`;
+                }
+            }
+        };
+
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
@@ -13,7 +26,7 @@ function renderCards(data) {
             <div>
                 <p>${section.short_description}</p>
             </div>
-            <a href="./checkout.html?key=${key}">Beli Kursus</a>
+            ${button}
         `;
         container.appendChild(card);
     });

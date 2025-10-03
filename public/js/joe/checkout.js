@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    const STORAGE_KEY = "ourses_order";
+    const STORAGE_KEY = "courses_order";
 
     function tambahKursus(user, kursusBaru) {
         let data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
