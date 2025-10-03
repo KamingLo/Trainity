@@ -1,11 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const registerForm = document.querySelector('.form-box-right form');
+    const registerForm = document.querySelector('.form-box form');
     
     if (registerForm) {
-        const usernameInput = registerForm.querySelector('input[placeholder="Username"]');
-        const emailInput = registerForm.querySelector('input[placeholder="Email"]');
+        const usernameInput = registerForm.querySelector('#username');
+        const emailInput = registerForm.querySelector('#email');
         const passwordInput = registerForm.querySelector('#password-input');
+        const confirmPasswordInput = registerForm.querySelector('#confirm-password-input'); 
         const togglePassword = registerForm.querySelector('#togglePassword');
+        
+        const errorMsg = registerForm.querySelector('#errorMsg');
+        const successMsg = registerForm.querySelector('#successMsg');
+
+        const showMessage = (element, message) => {
+            if (!element) return; // Pastikan elemen pesan ada
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
+            element.textContent = message;
+            element.style.display = 'block';
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 3000);
+        };
 
         registerForm.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -13,26 +28,69 @@ document.addEventListener('DOMContentLoaded', function() {
             const username = usernameInput.value.trim();
             const email = emailInput.value.trim();
             const password = passwordInput.value.trim();
+            const confirmPassword = confirmPasswordInput.value.trim();
 
-            if (username && email && password) {
-                alert('Registrasi berhasil! Anda akan diarahkan ke halaman login.');
-                window.location.href = 'login.html';
+            if (!username || !email || !password) {
+                showCustomAlert('Mohon lengkapi semua kolom pendaftaran.');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                showCustomAlert('Password tidak cocok.');
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            const userExists = users.some(user => user.username === username || user.email === email);
+
+            if (userExists) {
+                showCustomAlert('Username atau email sudah terdaftar.');
             } else {
-                alert('Mohon lengkapi semua kolom pendaftaran.');
+                users.push({ username, email, password });
+                
+                localStorage.setItem('users', JSON.stringify(users));
+                
+                showCustomAlert('Registrasi berhasil! Anda akan diarahkan ke halaman login.', true);
+                
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
             }
         });
 
         if (togglePassword) {
-            togglePassword.addEventListener('click', function() {
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
+            const toggleBothPasswords = () => {
+                // Periksa status salah satu input password (misalnya yang pertama)
+                const isPassword = passwordInput.getAttribute('type') === 'password';
+                const newType = isPassword ? 'text' : 'password';
 
-                this.classList.toggle('bx-show');
-                this.classList.toggle('bx-hide');
-            });
+                // Terapkan tipe baru ke kedua input password agar tetap sinkron
+                passwordInput.setAttribute('type', newType);
+                confirmPasswordInput.setAttribute('type', newType);
+
+                // Ganti kelas ikon hanya untuk tombol mata yang ada
+                togglePassword.classList.toggle('bx-hide', isPassword);
+                togglePassword.classList.toggle('bx-show', !isPassword);
+            };
+
+            // Tambahkan event listener hanya ke tombol mata yang pertama
+            togglePassword.addEventListener('click', toggleBothPasswords);
         }
-    } else {
-        console.error("Form registrasi tidak ditemukan.");
     }
 });
 
+function showCustomAlert(message, isSuccess = false) {
+    const alertContainer = document.getElementById('custom-alert-container');
+    if (!alertContainer) return;
+
+    const alert = document.createElement('div');
+    alert.className = `custom-alert ${isSuccess ? 'success' : 'error'}`;
+    alert.textContent = message;
+
+    alertContainer.appendChild(alert);
+
+    setTimeout(() => {
+        alert.remove();
+    }, 3000);
+}
