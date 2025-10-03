@@ -1,46 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
     const myCoursesList = document.getElementById('my-courses-list');
     const savedCoursesList = document.getElementById('saved-courses-list');
-
-    const userEnrolledCourses = {
-        'HTML': { progress: 75, enrolledDate: '15 Agu 2025' },
-        'CSS': { progress: 30, enrolledDate: '01 Sep 2025' },
-        'Javascript': { progress: 0, enrolledDate: '5 Sep 2025'},
-        'PHP': { progress: 0, enrolledDate: '17 Sep 2025'}
-    };
     
     const userSavedCourses = {
         'Laravel 8': { savedDate: '22 Sep 2025' },
         'Golang': { savedDate: '23 Sep 2025' }
     };
 
+    const STORAGE_KEY = "courses_order";
+    const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+    const currentUser = loggedInUser ? loggedInUser.username : null;
+    let enrolledCourseKeys = [];
+
+    if (currentUser && sessionStorage.getItem("Authenticated") === "True") {
+        const allOrders = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        const userOrder = allOrders.find(order => order.user === currentUser);
+        
+        if (userOrder) {
+            enrolledCourseKeys = userOrder.kursus;
+        }
+    }
+
     fetch('./db/database.json')
         .then(res => res.json())
         .then(allCourses => {
-            myCoursesList.innerHTML = ''; 
-            for (const key in userEnrolledCourses) {
+
+            myCoursesList.innerHTML = '';
+
+            enrolledCourseKeys.forEach(key => {
                 if (allCourses[key]) {
                     const courseData = allCourses[key];
-                    const userData = userEnrolledCourses[key];
+
+                    const userData = {
+                        progress: 0, 
+                        enrolledDate: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })
+                    };
 
                     const courseItem = document.createElement('a');
                     courseItem.href = `./belajar.html?key=${key}`; 
                     courseItem.className = 'course-item';
 
-                    let progressHTML = '';
-                    if (userData.progress > 0) {
-                        progressHTML = `
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: ${userData.progress}%;"></div>
-                            </div>
-                            <span class="progress-text">${userData.progress}% Selesai</span>`;
-                    } else {
-                        progressHTML = `
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: 0%;"></div>
-                            </div>
-                            <span class="progress-text start-prompt">Mulai Belajar</span>`;
-                    }
+                    let progressHTML = `
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                        <span class="progress-text start-prompt">Mulai Belajar</span>`;
 
                     courseItem.innerHTML = `
                         <img src="https://img.youtube.com/vi/${courseData.videos[0].link}/hqdefault.jpg" class="course-item-thumbnail">
@@ -54,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>`;
                     myCoursesList.appendChild(courseItem);
                 }
-            }
+            });
 
             savedCoursesList.innerHTML = '';
             for (const key in userSavedCourses) {
