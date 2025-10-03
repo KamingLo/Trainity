@@ -41,10 +41,14 @@
                 <div class="form-box">
                     <form action="#">
                         <h1>Login</h1>
+
+                        <p id="errorMsg" class="error-msg" style="display: none;"></p>
+                        <p id="successMsg" class="success-msg" style="display: none;"></p>
+
                         <div class="input-box">
-                            <label for="username" class="sr-only">Username</label>
-                            <input id="username" type="text" placeholder="Username" required>
-                            <i class='bx bxs-user'></i>
+                            <label for="email" class="sr-only">Email</label>
+                            <input id="email" type="email" placeholder="Email" required>
+                            <i class='bx bxs-envelope'></i>
                         </div> 
                         <div class="input-box">
                              <label for="password-input" class="sr-only">Password</label>
@@ -53,10 +57,15 @@
                             <i class='bx bx-show' id="togglePassword"></i> 
                         </div>
                         <button type="submit" class="btn">Login</button>
+                        
+                        <p id="errorMsg" class="error-msg">Email atau kata sandi tidak valid</p>
+                        <p id="successMsg" class="success-msg">Berhasil masuk</p>
+
                         <div class="bottom-link">
                             <p>Don't have an account? <a href="register.html">Sign Up</a></p>
                         </div>
                     </form>
+
                 </div>
 
                  <!-- <div class="toggle-box-visual">

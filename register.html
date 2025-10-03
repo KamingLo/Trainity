@@ -49,6 +49,8 @@
                 <div class="form-box">
                     <form action="#">
                         <h1>Registration</h1>
+                        <p id="errorMsg" class="error-msg" style="display: none;"></p>
+                        <p id="successMsg" class="success-msg" style="display: none;"></p>
                         <div class="input-box">
                             <!-- [PERBAIKAN] Label dan ID untuk aksesibilitas -->
                             <label for="username" class="sr-only">Username</label>
@@ -68,6 +70,12 @@
                             <i class='bx bxs-lock-alt'></i>
                             <i class='bx bx-show' id="togglePassword"></i> 
                         </div>
+                          <div class="input-box">
+                            <label for="confirm-password-input" class="sr-only">Confirm Password</label>
+                            <input type="password" id="confirm-password-input" placeholder="Confirm Password" required>
+                            <i class='bx bxs-lock-alt'></i>
+                        </div>
+
                         <button type="submit" class="btn">Register</button>
                         <div class="bottom-link"></div>
                                 <p>Already have an account? <a href="login.html">Login</a></p>
