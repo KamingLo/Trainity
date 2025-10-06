@@ -4,7 +4,6 @@ function renderCarousel(data, key){
     
     const certificate = document.createElement("div");
     certificate.className = "carousel-card";
-    console.log(data);
     certificate.innerHTML = `
             <div class="carousel-body" data-link="certificate">
                 <img src="./public/assets/Serti.png">
@@ -16,7 +15,6 @@ function renderCarousel(data, key){
     data.videos.forEach(item => {
         const card = document.createElement("div");
         card.className = "carousel-card";
-        console.log("ini terpanggil");
         card.innerHTML = `
             <button class="carousel-body" data-link="${item.link}" data-title="${item.title}" >
                 <img src="https://img.youtube.com/vi/${item.link}/hqdefault.jpg" alt="${item.title}">
@@ -29,6 +27,7 @@ function renderCarousel(data, key){
 
     carousel.appendChild(certificate);
 
+    updateLastChecked(key, data.videos[0].title);
     Iframe(data.videos[0].link);
     renderDetail(data, data.videos[0].title);
     
@@ -42,6 +41,7 @@ function renderCarousel(data, key){
             }
 
             const title = btn.getAttribute("data-title");
+            updateLastChecked(key, title);
             renderDetail(data, title);
             renderIframe(link);
         });
@@ -60,3 +60,40 @@ carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
 nextBtn.addEventListener("click", () => {
 carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
 });
+
+function updateLastChecked(key, title) {
+    const userSessionStr = sessionStorage.getItem('loggedInUser');
+    if (!userSessionStr) {
+        console.error('Session user tidak ditemukan.');
+        return;
+    }
+
+    const currentUser = JSON.parse(userSessionStr);
+    if (!currentUser.email) {
+        console.error('Email user tidak ditemukan di sessionStorage.');
+        return;
+    }
+
+    const dataStr = localStorage.getItem('LastChecked');
+    let usersData = dataStr ? JSON.parse(dataStr) : [];
+
+    let user = usersData.find(u => u.Email === currentUser.email);
+
+    if (!user) {
+        user = {
+            Email: currentUser.email,
+            lastChecked: [{ Key: key, TitleChecked: title }]
+        };
+        usersData.push(user);
+    } else {
+        const existingKey = user.lastChecked.find(lc => lc.Key === key);
+        if (existingKey) {
+            existingKey.TitleChecked = title;
+        } else {
+            user.lastChecked.push({ Key: key, TitleChecked: title });
+        }
+    }
+
+    localStorage.setItem('LastChecked', JSON.stringify(usersData));
+    console.log('Data berhasil diperbarui:', usersData);
+}

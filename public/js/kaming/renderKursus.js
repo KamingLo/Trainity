@@ -10,7 +10,8 @@ function renderCards(data) {
         let order = localStorage.getItem("courses_order");
         if(order && sessionStorage.getItem("Authenticated") === "True") {
             for(let obj of JSON.parse(order)){
-                if(obj.kursus.includes(key)){
+                const userSession = JSON.parse(sessionStorage.getItem("loggedInUser"));
+                if(obj.kursus.includes(key) && userSession.username === obj.user ){
                     button = `<p class="blocked">Kamu sudah punya kursus ini</p>`;
                 } else{
                     button = `<a href="./checkout.html?key=${key}">Beli Kursus</a>`;
