@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./public/css/default.css">
     <link rel="stylesheet" href="./public/css/charless.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <title>Dashboard Kursus | Trainity</title>
+    <title>Dashboard Pengguna | Trainity</title>
 </head>
 
 <body>
@@ -38,24 +38,24 @@
         <p class="dashboard-subtitle">Lanjutkan perjalanan belajarmu dan raih impianmu di dunia teknologi.</p>
 
         <div class="tabs">
-            <button class="tab-button active" data-target="#my-courses">Kursus Terdaftar</button>
-            <button class="tab-button" data-target="#saved-courses">Kursus Disimpan</button>
+            <button class="tab-button active" data-target="#active-courses">Kursus Aktif</button>
+            <button class="tab-button" data-target="#completed-courses">Kursus Selesai</button>
         </div>
 
         <div class="tab-content">
-            <section id="my-courses" class="tab-pane active">
-                <p class="tab-info">Daftar semua kursus yang sedang atau telah Anda ikuti. Lacak progres Anda dan lanjutkan pembelajaran.</p>
-                <div class="course-list" id="my-courses-list"></div>
+            <section id="active-courses" class="tab-pane active">
+                <p class="tab-info">Daftar kursus yang sedang Anda ikuti. Lanjutkan progres belajarmu!</p>
+                <div class="course-list" id="active-courses-list"></div>
             </section>
 
-            <section id="saved-courses" class="tab-pane">
-                <p class="tab-info">Kursus yang Anda simpan akan muncul di sini. Simpan kursus yang menarik untuk dibeli dan dipelajari di lain waktu.</p>
-                <div class="course-list" id="saved-courses-list"></div>
+            <section id="completed-courses" class="tab-pane">
+                <p class="tab-info">Daftar kursus yang telah Anda selesaikan 100%.</p>
+                <div class="course-list" id="completed-courses-list"></div>
             </section>
         </div>
     </main>
     
-        <footer class="footer">
+    <footer class="footer">
         <div class="footer-container">
         
             <!-- LEFT -->
@@ -103,6 +103,7 @@
     <script src="./public/js/burger.js"></script>
     <script src="./public/js/navbar.js"></script>
     <script src="./public/js/footer.js"></script>
+    <script src="./public/js/auth-check.js"></script>
     <script src="./public/js/charless/tabDashboard.js"></script>
     <script src="./public/js/charless/kursusDashboard.js"></script>
 </body>
