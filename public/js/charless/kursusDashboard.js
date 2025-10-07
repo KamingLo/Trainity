@@ -97,7 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (!hasActiveCourses) {
-                activeCoursesList.innerHTML = '<p class="empty-message">Tidak ada kursus aktif. Mulai kursus baru dan lanjutkan progres belajarmu!</p>';
+                activeCoursesList.innerHTML = `
+                    <div class="empty-message">
+                        <p class="empty-message-text">Tidak ada kursus aktif. Mulai kursus baru dan lanjutkan progres belajarmu!</p>
+                        <div class="lihat-lainnya-container">
+                            <a href="./kursus.html" class="btn-secondary">Lihat Kursus</a>
+                        </div>
+                    </div>
+                `;
             }
             if (!hasCompletedCourses) {
                 completedCoursesList.innerHTML = '<p class="empty-message">Anda belum menyelesaikan kursus apapun. Teruslah belajar!</p>';

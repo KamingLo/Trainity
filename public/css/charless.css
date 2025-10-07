@@ -587,8 +587,6 @@
     line-height: 1.6;
 }
 
-
-
 /* animasi looping untuk bagian testimoni */
 @keyframes scroll {
     0% {
@@ -799,8 +797,9 @@
     text-align: center;
     color: var(--color-gray-400);
     padding: var(--spacing-12) var(--spacing-8);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-lg);
 }
+
 
 /* Responsive*/
 @media (max-width: 1024px) {
