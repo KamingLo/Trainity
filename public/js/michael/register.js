@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const userExists = users.some(user => user.username === username || user.email === email);
 
             if (userExists) {
-                showMessage(errormsg,'Username atau email sudah digunakan.');
+                showMessage(errorMsg,'Username atau email sudah digunakan.');
             } else {
                 users.push({ username, email, password });
                 

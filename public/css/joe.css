@@ -1,5 +1,9 @@
 /* ------------ guidance.html ------------ */
 
+/* * {
+    border: 2px solid red;
+} */
+
 .faq-container {
     display: flex;
     min-height: 70vh;
@@ -12,6 +16,7 @@
     width: 70%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .faq-search {
@@ -49,6 +54,10 @@
     padding: 2rem;
     color: white;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    max-height: 500px;
 }
 
 .faq-right h1 {
@@ -56,6 +65,30 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: #ffffff;
+    flex-shrink: 0;
+}
+
+.faq-items-container {
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.faq-items-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.faq-items-container::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+.faq-items-container::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 10px;
+}
+
+.faq-items-container::-webkit-scrollbar-thumb:hover {
+    background: #555555;
 }
 
 .faq-item {
@@ -96,18 +129,30 @@
 
 @media (max-width: 992px) {
     .faq-container {
-        flex-direction: column;
+        margin-top: 0rem;
+    }
+    .faq-left img {
+        display: none;
     }
     .faq-left {
-        width: 40%;
-        padding: 1.5rem;
+        padding: 0rem;
+        gap: 0px;
+        width: 100%;
+    }
+    .faq-search {
+        display: block;
+        max-width: 90%;
     }
     .faq-right {
         width: 100%;
-        padding: 1.5rem;
+        max-height: 60vh;
     }
     .faq-box {
         width: 100%;
+        min-height: inherit;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
     }
 }
 
@@ -129,6 +174,7 @@
     }
     .faq-right {
         width: 100%;
+        max-height: 60vh;
     }
     .faq-box {
         width: 100%;

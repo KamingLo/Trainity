@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function addAnimation() {
         scrollers.forEach((scroller) => {
-            scroller.setAttribute("data-animated", true);
             const scrollerInner = scroller.querySelector(".testimoni-list");
             const scrollerContent = Array.from(scrollerInner.children);
             
@@ -16,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 duplicatedItem.setAttribute("aria-hidden", true);
                 scrollerInner.appendChild(duplicatedItem);
             });
+            
+            scroller.setAttribute("data-animated", true);
         });
     }
 });
