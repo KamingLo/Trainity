@@ -714,7 +714,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 323px);
     gap: var(--spacing-8);
-    justify-content: start;
+    justify-content: Center;
 }
 
 .course-item {
@@ -803,56 +803,109 @@
 
 /* Responsive*/
 @media (max-width: 1024px) {
-    .hero-section {
+.hero-section {
+        margin: 0;
         flex-direction: column;
-        text-align: center;
-        margin: var(--spacing-8) var(--spacing-4);
+        text-align: left;
     }
-    .categories, .featured-courses {
-        margin-left: var(--spacing-4);
-        margin-right: var(--spacing-4);
+    
+    .hero-left p {
+        margin: 0 auto;
     }
-    .hero-left h1 {
-        font-size: var(--font-size-3xl);
+    
+    .hero-left{
+        margin: var(--spacing-8);
+        margin-bottom: 0;
     }
 
+    .hero-right{
+        margin: var(--spacing-8);
+    }
+    
+    .hero-right img{
+        max-width: 100%;
+    }
+    
+    
     .hero-buttons {
         justify-content: center; 
+        order: 3;
     }
 
-    .video-feature-section {
+
+    .video-feature-section,
+    .partnership-section {
         flex-direction: column;
         text-align: center;
-        margin-left: var(--spacing-4);
-        margin-right: var(--spacing-4);
-        gap: var(--spacing-8);
+    }
+
+    .partnership-section {
+        flex-direction: column-reverse; 
+    }
+
+    .video-feature-section,
+    .mengapa-memilih-section,
+    .partnership-section,
+    .categories, 
+    .featured-courses {
+        margin-left: var(--spacing-8);
+        margin-right: var(--spacing-8);
     }
 
     .feature-text li {
-        text-align: left;
+        text-align: left; 
+    }
+    
+    .partnership-left {
+        padding-left: 0;
     }
 
-    .dashboard-container {
-        margin-left: var(--spacing-4);
-        margin-right: var(--spacing-4);
+    .section-subtitle {
+        max-width: 80%;
+    }
+
+    .action-section p {
+        max-width: 75%;
     }
 }
 
 @media (max-width: 768px) {
-    .hero-left h1 {
-        font-size: 2.5rem;
+    .section-title,
+    .feature-text h2,
+    .partnership-left h2,
+    .action-section h2 {
+        font-size: var(--font-size-2xl); 
+    }
+    
+    .hero-buttons a {
+        min-width: initial; 
+        padding: var(--spacing-2) var(--spacing-5); 
+        font-size: var(--font-size-sm); 
+    }
+
+    .video-feature-section,
+    .mengapa-memilih-section,
+    .partnership-section,
+    .categories,
+    .featured-courses,
+    .testimoni-section,
+    .action-section {
+        margin-top: var(--spacing-16); 
+        margin-bottom: var(--spacing-16);
+        margin-left: var(--spacing-4);
+        margin-right: var(--spacing-4);
     }
 
     .category-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
+    .partnership-image-container {
+        width: 280px;
+        height: 280px;
     }
 
-    .dashboard-container {
-        padding-top: var(--spacing-8);
+    .testimoni-card {
+        width: 320px; 
     }
 }
