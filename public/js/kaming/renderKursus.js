@@ -8,18 +8,16 @@ function renderCards(data) {
         const section = data[key];
         let button;
         let order = localStorage.getItem("courses_order");
+        button = `<a href="./checkout.html?key=${key}">Beli Kursus</a>`;
+
         if(order && sessionStorage.getItem("Authenticated") === "True") {
             for(let obj of JSON.parse(order)){
                 const userSession = JSON.parse(sessionStorage.getItem("loggedInUser"));
-
                 if(obj.user.includes(userSession.username)){
                     console.log(obj.user)
                     if(obj.kursus.includes(key)){
                         console.log("gagal");
                         button = `<p class="blocked">Kamu sudah punya kursus ini</p>`;
-                    }
-                     else{
-                        button = `<a href="./checkout.html?key=${key}">Beli Kursus</a>`;
                     }
                 }
             }
