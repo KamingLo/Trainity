@@ -29,12 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
             let hasActiveCourses = false;
             let hasCompletedCourses = false;
 
-            if (enrolledCourseKeys.length === 0) {
-                activeCoursesList.innerHTML = '<p class="empty-message">Anda belum mendaftar kursus apapun.</p>';
-                completedCoursesList.innerHTML = '<p class="empty-message">Anda belum menyelesaikan kursus apapun.</p>';
-                return; 
-            }
-
             enrolledCourseKeys.forEach(key => {
                 if (allCourses[key]) {
                     const courseData = allCourses[key];
