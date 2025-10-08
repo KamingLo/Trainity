@@ -30,16 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     const card = document.createElement("div");
                     card.classList.add("course-card");
 
-                    // mengganti namam 'laravel 8' menjadi 'laravel' 
-                    const displayName = key === "Laravel 8" ? "Laravel" : key;
-
                     // membuat HTML untuk course card
                     card.innerHTML = `
                         <a href="./checkout.html?key=${key}">
-                            <img class="course-thumbnail" src="https://img.youtube.com/vi/${course.videos[0].link}/hqdefault.jpg" alt="${displayName} Course Thumbnail">
+                            <img class="course-thumbnail" src="https://img.youtube.com/vi/${course.videos[0].link}/hqdefault.jpg" alt="${key} Course Thumbnail">
                             
                             <div class="course-content">
-                                <h3 class="course-title">${displayName}</h3>
+                                <h3 class="course-title">${key}</h3>
                                 <p class="course-description">${course.short_description}</p>
                                 
                                 <div class="course-info">
