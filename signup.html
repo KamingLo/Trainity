@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainity | Solusi Belajar Koding Secara Online</title>
+    <link rel="icon" type="image/png" href="./public/assets/TrainityMarkWhite.png">
+    
+    <link rel="stylesheet" href="./public/css/default.css"> 
+    <link rel="stylesheet" href="./public/css/michael.css"> 
+    
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <div id="custom-alert-container"></div>
+
+    <header class="header">
+        <nav style="display: flex;">
+            <div class="logo-navbar">
+                <a href="./index.html">
+                    <img class="logo-img" src="./public/assets/TrainityFullWhite.png" alt="Logo Trainity">
+                </a>
+            </div>
+            <div class="burger" id="burger">
+                <i class="bx bx-menu"></i>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./kursus.html" class="nav-link">Kursus</a>
+                <a href="./lainnya.html" class="nav-link" id="lainnya-link">Lainnya</a>
+                <a href="./login.html" class="btn-outline" id="login-link">Login</a>
+                <a href="./signup.html" class="btn-primary" id="signup-link">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="auth-container auth-container--register">
+                <div class="toggle-box-visual">
+                    <img src="./public/assets/authBack.webp" alt="">
+                </div>
+
+                <div class="form-box">
+                    <form action="#">
+                        <h1>Registration</h1>
+                        <div class="input-box">
+                            <label for="username" class="sr-only">Username</label>
+                            <input id="username" type="text" placeholder="Username">
+                            <i class='bx bxs-user'></i>
+                        </div>
+                        <div class="input-box">
+                            <label for="email" class="sr-only">Email</label>
+                            <input id="email" type="email" placeholder="Email">
+                            <i class='bx bxs-envelope'></i>
+                        </div>
+                         <div class="input-box">
+                            <label for="password-input" class="sr-only">Password</label>
+                            <input type="password" id="password-input" placeholder="Password">
+                            <i class='bx bxs-lock-alt'></i>
+                            <i class='bx bx-show' id="togglePassword"></i> 
+                        </div>
+                          <div class="input-box">
+                            <label for="confirm-password-input" class="sr-only">Confirm Password</label>
+                            <input type="password" id="confirm-password-input" placeholder="Confirm Password">
+                            <i class='bx bxs-lock-alt'></i>
+                        </div>
+
+                        <button type="submit" class="btn">Register</button>
+                        
+                        <p id="errorMsg" style="display: none; color:red;"></p>
+                        <p id="successMsg" style="display: none; color:green;"></p>
+                        
+                        <div class="bottom-link"></div>
+                            <p>Already have an account? <a href="login.html">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="./public/js/michael/auth.js"></script>
+    <script src="./public/js/burger.js"></script>
+    <script src="./public/js/navbar.js"></script>
+    <script src="./public/js/michael/register.js"></script> 
+</body>
+</html>

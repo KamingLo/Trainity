@@ -1,0 +1,421 @@
+/* CSS untuk profile.html */
+.profile-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-8) var(--spacing-4);
+    min-height: calc(100vh - 160px); 
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 650px;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-8);
+    box-shadow: 0 0 30px 1px #8A2BE2;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--color-gray-700);
+    object-fit: cover;
+}
+
+.avatar-container:hover .avatar-overlay {
+    opacity: 1 !important;
+}
+
+.user-info h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--color-gray-50);
+}
+
+.user-info p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-400);
+}
+
+.settings-form h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-6);
+    padding-bottom: var(--spacing-3);
+    border-bottom: 1px solid var(--color-gray-800);
+    color: var(--color-gray-200);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-5);
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--spacing-2);
+    color: var(--color-gray-300);
+}
+
+.form-group input {
+    width: 100%;
+    padding: var(--spacing-3);
+    background-color: var(--color-gray-800);
+    border: 1px solid var(--color-gray-700);
+    border-radius: var(--radius-md);
+    color: var(--color-gray-50);
+    font-size: var(--font-size-base);
+    transition: var(--transition-base);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.4); 
+}
+
+.form-group input:disabled {
+    background-color: var(--color-gray-700);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--color-gray-800);
+    margin: var(--spacing-8) 0;
+}
+
+.btn-save {
+    width: 100%;
+    padding: var(--spacing-3) var(--spacing-4);
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.btn-save:hover {
+    background-color: var(--color-secondary);
+}
+
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid #4CAF50;
+    z-index: 10000;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.custom-alert.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.custom-alert.error {
+    border-left-color: #f44336;
+}
+
+.custom-alert.success {
+    border-left-color: #4CAF50;
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-content i {
+    font-size: 1.5rem;
+}
+
+.alert-content i.bx-check-circle {
+    color: #4CAF50;
+}
+
+.alert-content i.bx-error-circle {
+    color: #f44336;
+}
+
+.alert-content span {
+    color: #333;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .custom-alert {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        transform: translateY(-100px);
+    }
+    
+    .custom-alert.show {
+        transform: translateY(0);
+    }
+}
+
+/* CSS untuk halaman Sertifikat */
+:root {
+    --sertifikat-primary-blue: #2563EB;
+    --sertifikat-secondary-blue: #3B82F6;
+    --sertifikat-dark-bg: #1A202C;
+    --sertifikat-text-light: #F7FAFC;
+    --sertifikat-text-muted: #CBD5E0;
+    --sertifikat-font: 'Poppins', sans-serif;
+}
+
+body.sertifikat-page {
+    margin: 0;
+    padding: 0;
+    font-family: var(--sertifikat-font);
+    background-color: #0d1117; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--sertifikat-text-light);
+}
+
+.sertifikat-body {
+    width: 1123px;
+    height: 794px;
+    background-color: var(--sertifikat-dark-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sertifikat-container-design {
+    width: calc(100% - 80px); 
+    height: calc(100% - 80px);
+    border: 3px solid var(--sertifikat-primary-blue);
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(26, 32, 44, 0.95);
+}
+
+.background-pattern {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.1) 0%, transparent 25%),
+        radial-gradient(circle at 90% 90%, rgba(37, 99, 235, 0.1) 0%, transparent 25%);
+    z-index: 1;
+}
+
+.header-sertifikat {
+    width: 100%;
+}
+
+.logo-sertifikat {
+    width: 150px;
+}
+
+.header-sertifikat p {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: var(--sertifikat-text-muted);
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.content-sertifikat h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--sertifikat-text-muted);
+}
+
+.content-sertifikat h1#nama-peserta { 
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--sertifikat-secondary-blue);
+    margin: 10px 0 20px 0;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--sertifikat-primary-blue);
+    display: inline-block;
+}
+
+.kursus-desc {
+    font-size: 1.1rem;
+    color: var(--sertifikat-text-light);
+}
+
+.kursus-title#judul-kursus { 
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--sertifikat-primary-blue);
+    margin-top: 10px;
+}
+
+.footer-sertifikat {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.signature {
+    text-align: center;
+}
+
+.signature img#tanda-tangan { 
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.signature p#nama-instruktur { 
+    font-weight: 600;
+    margin: 5px 0 0 0;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--sertifikat-text-muted);
+}
+
+.signature span {
+    font-size: 0.9rem;
+    color: var(--sertifikat-text-muted);
+}
+
+.date-id {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--sertifikat-text-muted);
+}
+
+.sertifikat-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.download-action {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, var(--sertifikat-primary-blue), var(--sertifikat-secondary-blue));
+    color: var(--sertifikat-text-light);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 200px;
+    justify-content: center;
+    font-family: var(--sertifikat-font);
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, var(--sertifikat-secondary-blue), var(--sertifikat-primary-blue));
+}
+
+.download-btn:disabled {
+    background: #4A5568;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.download-btn i {
+    font-size: 1.3rem;
+}
+
+.bx-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 1200px) {
+    .sertifikat-body {
+        width: 95%;
+        height: auto;
+        aspect-ratio: 1123 / 794;
+        max-width: 1123px;
+    }
+    
+    .sertifikat-container-design {
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sertifikat-wrapper {
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .download-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+        min-width: 180px;
+    }
+    
+    .content-sertifikat h1#nama-peserta {
+        font-size: 2.5rem;
+    }
+    
+    .kursus-title#judul-kursus {
+        font-size: 1.8rem;
+    }
+}

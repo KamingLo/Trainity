@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="./public/assets/TrainityMarkWhite.png">
+    <link rel="stylesheet" href="./public/css/default.css">
+    <link rel="stylesheet" href="./public/css/fabio.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile & Settings | Trainity</title>
+</head>
+<body>
+    <header class="header">
+        <nav style="display: flex;">
+            <div class="logo-navbar">
+                <a href="./index.html">
+                    <img class="logo-img" src="./public/assets/TrainityFullWhite.png" alt="Logo Trainity">
+                </a>
+            </div>
+
+            <div class="burger" id="burger">
+                <i class="bx bx-menu"></i>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./kursus.html" class="nav-link">Kursus</a>
+                <a href="./lainnya.html" class="nav-link" id="lainnya-link">Lainnya</a>
+                <a href="./login.html" class="btn-outline" id="login-link">Login</a>
+                <a href="./signup.html" class="btn-primary" id="signup-link">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-page-container">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar-container" style="position: relative; cursor: pointer;" id="avatar-container">
+                        <img src="./public/assets/avatar-placeholder.png" alt="User Avatar" class="avatar" id="profile-avatar">
+                        <div class="avatar-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); color: white; display: flex; justify-content: center; align-items: center; border-radius: 50%; opacity: 0; transition: opacity 0.3s;">
+                            <i class='bx bx-camera' style="font-size: 2rem;"></i>
+                        </div>
+                    </div>
+                    <input type="file" id="file-input" accept="image/*" style="display: none;">
+
+                    <div class="user-info">
+                        <h1>[Nama Pengguna]</h1>
+                        <p>[email@pengguna.com]</p>
+                    </div>
+                </div>
+
+                <div class="settings-form">
+                    <h2>Pengaturan Akun</h2>
+                    <form id="settingsForm">
+                        <div class="form-group">
+                            <label for="fullName">Nama Lengkap</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" id="email" name="email" disabled>
+                        </div>
+                        <hr class="divider">
+                        <div class="form-group">
+                            <label for="newPassword">Password Baru</label>
+                            <input type="password" id="newPassword" name="newPassword" placeholder="Kosongkan jika tidak ingin diubah">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Konfirmasi Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Ketik ulang password baru">
+                        </div>
+                        <button type="submit" class="btn-save">
+                            <i class='bx bxs-save'></i> Simpan Perubahan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        
+        <div class="footer-left">
+          <a href="./index.html" class="footer-logo"><img src="./public/assets/TrainityFullWhite.png" width="240px"></a>
+          <p class="footer-thanks">Terima kasih telah berkunjung ke situs kami. Saya harap anda mendapatkan manfaat dari website ini</p>
+        </div>
+
+        <div class="footer-center">
+          <nav class="footer-nav" id="footer-nav">
+            <p>Halaman</p>
+            <a href="./index.html">Home</a>
+            <a href="./kursus.html">Kursus</a>
+            <a href="./lainnya.html" id="footer-lainnya">Lainnya</a>
+            <a href="./login.html" id="footer-login">Login</a>
+            <a href="./signup.html" id="footer-signup">Sign Up</a>
+          </nav>
+        </div>
+
+        <div class="footer-right">
+          <h4>About Us</h4>
+          <p>Trainity, Platform belajar coding dengan tampilan yang modern dan intuitif. Bekerja sama bersama Profesional dengan tujuan
+             menciptakan Programmer Indonesia yang lebih Kompetitif di Internasional</p>
+          
+          <h4 style="margin-top: 1rem;">Contact</h4>
+          <p>Email: <a href="mailto:fabio@gmail.com">fabio@gmail.com</a></p>
+          <p>Phone: <a href="https://wa.me/6281210891236">+62 812-1089-1236</a></p>
+          
+          <div class="footer-social">
+            <a href="https://github.com/FabioCoco" target="_blank"><i class="bx bxl-github"></i></a>
+            <a href="https://instagram.com/fabio_francisco20" target="_blank"><i class="bx bxl-instagram"></i></a>
+            <a href="https://linkedin.com/in/fabio-francisco-49454029a" target="_blank"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://wa.me/6281210891236" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Kaming. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./public/js/burger.js"></script>
+    <script src="./public/js/navbar.js"></script>
+    <script src="./public/js/footer.js"></script>
+    <script src="./public/js/Fabio/profile.js" defer></script> 
+    <script src="./public/js/auth-check.js"></script>
+</body>
+</html>

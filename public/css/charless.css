@@ -1,0 +1,934 @@
+/* variabel root */
+:root {
+    /* color pallete */
+    --color-background: #020202;
+    --color-background-light: #040404;
+    --color-accent: #1369ff;
+    --color-secondary: #4d8eff;
+    --color-white: #ffffff;
+    --color-red:#ff0000;
+    --color-dark-red:#cd0000;
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+    --color-black-800:#101010;
+
+    /* aturan font */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.5rem;
+
+    /* spacing */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+    --spacing-32: 8rem;
+    --spacing-48: 12rem;
+
+    /* radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+
+    /* transition dan shadow */
+    --transition-base: all 0.2s ease;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* Homepage */
+
+/* section hero */
+.hero-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--spacing-16) var(--spacing-32) var(--spacing-32) var(--spacing-32);
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-left h1 {
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-4);
+}
+
+.hero-left p {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-300);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-4);
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-right img {
+    max-width: 90%;
+    border-radius: var(--spacing-4);
+    box-shadow: 
+    0 4px 16px var(--color-gray-900),
+    0 4px 16px var(--color-gray-700);
+}
+
+.hero-buttons {
+    margin-top: var(--spacing-8); 
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4); 
+}
+
+.hero-buttons a {
+    padding: var(--spacing-3) var(--spacing-6);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition-smooth);
+    border: 2px solid transparent; 
+    min-width: 15rem;
+}
+
+.hero-buttons .btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+.hero-buttons .btn-secondary {
+    background-color: var(--color-gray-800);
+    color: var(--color-gray-300);
+}
+
+.hero-buttons .btn-secondary:hover {
+    background-color: var(--color-gray-700);
+    border-color: var(--color-gray-600);
+    transform: translateY(-3px);
+}
+
+/* section video feature |  bagian yang berisi informasi fitur pembelajaran video*/ 
+.video-feature-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+    margin: var(--spacing-32) var(--spacing-16);
+    padding: var(--spacing-8);
+    border: 1px solid;
+    border-radius: var(--radius-2xl);
+    border-color: var(--color-secondary);
+    background-color: var(--color-gray-900);
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-6);
+    color: var(--color-white);
+}
+
+.feature-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-text li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+    font-size: var(--font-size-base);
+    color: var(--color-gray-200);
+}
+
+.feature-text li i {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-top: 4px;
+}
+
+.feature-visual {
+    flex: 1;
+}
+
+.feature-visual img {
+    width: 100%;
+    border-radius: var(--radius-xl);
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* styling umum untuk judul section */
+.section-title {
+    text-align: center;
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-12);
+    margin-top: 0;
+}
+
+.featured-courses {
+    margin: var(--spacing-32) var(--spacing-16);
+}
+
+.categories {
+    margin: var(--spacing-32) var(--spacing-16);
+    padding-top: var(--spacing-12);
+    padding-bottom: var(--spacing-16);
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-2xl);
+    background-color: var(--color-gray-900);
+    text-align: center;
+}
+
+.lihat-lainnya-container {
+    text-align: center;
+    margin-top: var(--spacing-12);
+}
+
+.lihat-lainnya-container .btn-secondary {
+    padding: var(--spacing-3) var(--spacing-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition-smooth);
+    background-color: var(--color-gray-800);
+    color: var(--color-gray-300);
+    border: 1px solid var(--color-gray-700);
+    display: inline-block;
+}
+
+.lihat-lainnya-container .btn-secondary:hover {
+    background-color: var(--color-gray-700);
+    border-color: var(--color-gray-600);
+    transform: translateY(-3px);
+}
+
+
+.categories {
+    margin: var(--spacing-32) var(--spacing-16);
+}
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-6);
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-gray-800);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-gray-700);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.category-card i {
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+}
+
+.category-card span {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+}
+
+/* section mengapa memilih */
+.mengapa-memilih-section {
+    margin: var(--spacing-32) var(--spacing-16);
+    text-align: center;
+}
+
+/* styling agar scroll nya ada jarak */
+#mengapa-memilih, #kursus-unggulan {
+    scroll-margin-top: var(--spacing-16)
+}
+
+/* styling umum untuk subtitle section */
+.section-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-400);
+    max-width: 60%;
+    margin: 0 auto var(--spacing-12) auto;
+}
+
+.advantages-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-8);
+    text-align: left;
+}
+
+.advantage-card {
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-gray-800);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-8);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: var(--transition-smooth);
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-secondary);
+    background-color: var(--color-gray-900);
+    box-shadow: 0 4px 15px rgba(47, 129, 247, 0.1);
+}
+
+.advantage-icon {
+    background-color: var(--color-gray-900);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+    display: inline-flex;
+}
+
+.advantage-icon i {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+}
+
+.advantage-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-3);
+}
+
+.advantage-card p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-400);
+    line-height: 1.6;
+}
+
+/* section partnership | section yang berisi informasi kolaborasi  */
+.partnership-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+    margin: var(--spacing-32) var(--spacing-16);
+    padding: var(--spacing-12) var(--spacing-8);
+    background-color: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+}
+
+.partnership-left {
+    flex: 1.2; 
+    padding-left: var(--spacing-8);
+}
+
+.partnership-eyebrow {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-4);
+    text-transform: uppercase;
+}
+
+.partnership-left h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-6);
+}
+
+.partnership-left p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-300);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-8);
+}
+
+.partnership-button a {
+    padding: var(--spacing-3) var(--spacing-6);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+    background-color: var(--color-gray-800);
+    color: var(--color-gray-300);
+}
+
+.partnership-button a:hover {
+    background-color: var(--color-gray-700);
+    border-color: var(--color-gray-600);
+    transform: translateY(-3px);
+}
+
+.partnership-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.partnership-image-container {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partnership-image-container::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 105%;
+    height: 105%;
+    
+    background: radial-gradient(
+        circle,
+        rgba(19, 105, 255, 0.25) 60%, 
+        rgba(19, 105, 255, 0) 85%    
+    );
+
+    filter: blur(15px);
+}
+
+.partnership-image-container img {
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 2; 
+}
+
+/* styling course card */
+.course-card {
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-gray-800);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.course-card:hover {
+    box-shadow: 0 2px 16px var(--color-accent);
+    transform: translateY(-10px);
+}
+
+.course-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.course-thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background-color: #101010;
+}
+
+.course-content {
+    padding: var(--spacing-5);
+}
+
+.course-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-2);
+    color: var(--color-white);
+}
+
+.course-description {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-4);
+    line-height: 1.6;
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.course-level {
+    background-color: var(--color-gray-800);
+    color: var(--color-gray-300);
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: var(--radius-md);
+}
+
+.course-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    color: #ffc107;
+    font-weight: 600;
+}
+
+
+/* section testimoni  */
+.testimoni-section {
+    margin: var(--spacing-32) 0;
+}
+
+.scroller {
+    max-width: 100%;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .testimoni-list {
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.scroller[data-animated="true"]:hover .testimoni-list {
+    animation-play-state: paused;
+}
+
+.testimoni-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--spacing-8);
+    padding-block: var(--spacing-4);
+    list-style: none;
+    padding-inline: 0;
+    margin: 0;
+}
+
+
+.testimoni-card {
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-gray-800);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-6);
+    flex-shrink: 0;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.card-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-header .name {
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+.card-header .institution {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-400);
+}
+
+.quote {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-300);
+    line-height: 1.6;
+}
+
+/* animasi looping untuk bagian testimoni */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50%));
+    }
+}
+
+/* section call to action | section yang memberikan pesan ajakan ke pengguna */
+.action-section {
+    max-width: 1200px;
+    margin: var(--spacing-32) auto;
+    padding: var(--spacing-16) var(--spacing-8);
+    background-color: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: var(--radius-2xl);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-section h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-4);
+}
+
+.action-section p {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-400);
+    max-width: 50%;
+    margin-bottom: var(--spacing-8);
+}
+
+.action-section .btn-primary {
+    padding: var(--spacing-3) var(--spacing-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition-smooth);
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    display: inline-block;
+}
+
+.action-section .btn-primary:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(19, 105, 255, 0.2);
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* dashboard page */
+
+/* styling untuk container dashboard */
+.dashboard-container {
+    margin: var(--spacing-12) var(--spacing-16);
+    padding-bottom: var(--spacing-32);
+}
+
+.dashboard-container h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-2);
+}
+
+.dashboard-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-8);
+}
+
+/* styling untuk tabs dashboard */
+.tabs {
+    display: flex;
+    gap: var(--spacing-4);
+    border-bottom: 1px solid var(--color-gray-800);
+    margin-bottom: var(--spacing-8);
+}
+
+.tab-button {
+    padding: var(--spacing-3) var(--spacing-5);
+    background: none;
+    border: none;
+    color: var(--color-gray-400);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border-bottom: 2px solid transparent;
+    position: relative;
+    top: 1px;
+}
+
+.tab-button:hover {
+    color: var(--color-white);
+}
+
+.tab-button.active {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-info {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-8);
+    max-width: 75%; 
+    line-height: 1.6;
+}
+
+/* styling untuk course di dashboard */
+.courses-container,
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 323px);
+    gap: var(--spacing-8);
+    justify-content: Center;
+}
+
+.course-item {
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-gray-700);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.course-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 2px 16px var(--color-accent);
+}
+
+.course-item-thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;
+    background-color: var(--color-black-800);
+}
+
+.course-item-content {
+    padding: var(--spacing-5);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.course-item-content h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-4);
+    color: var(--color-white);
+}
+
+/* styling progress bar */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-gray-800);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-2);
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-lg);
+}
+
+.progress-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-4);
+}
+
+.progress-text.start-prompt {
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.enrollment-date {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin-top: auto;
+}
+
+/* styling pesan ketika dashboard kosong */
+.empty-message {
+    grid-column: 1 / -1; 
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-gray-700);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    color: var(--color-gray-400);
+    padding: var(--spacing-12) var(--spacing-8);
+    font-size: var(--font-size-lg);
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* Responsive*/
+@media (max-width: 1024px) {
+.hero-section {
+        margin: 0;
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .hero-left p {
+        margin: 0 auto;
+    }
+    
+    .hero-left{
+        margin: var(--spacing-8);
+        margin-bottom: 0;
+    }
+
+    .hero-right{
+        margin: var(--spacing-8);
+    }
+    
+    .hero-right img{
+        max-width: 100%;
+    }
+    
+    
+    .hero-buttons {
+        justify-content: center; 
+        order: 3;
+    }
+
+
+    .video-feature-section,
+    .partnership-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .partnership-section {
+        flex-direction: column-reverse; 
+    }
+
+    .video-feature-section,
+    .mengapa-memilih-section,
+    .partnership-section,
+    .categories, 
+    .featured-courses {
+        margin-left: var(--spacing-8);
+        margin-right: var(--spacing-8);
+    }
+
+    .feature-text li {
+        text-align: left; 
+    }
+    
+    .partnership-left {
+        padding-left: 0;
+    }
+
+    .section-subtitle {
+        max-width: 80%;
+    }
+
+    .action-section p {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title,
+    .feature-text h2,
+    .partnership-left h2,
+    .action-section h2 {
+        font-size: var(--font-size-2xl); 
+    }
+    
+    .hero-buttons a {
+        min-width: initial; 
+        padding: var(--spacing-2) var(--spacing-5); 
+        font-size: var(--font-size-sm); 
+    }
+
+    .video-feature-section,
+    .mengapa-memilih-section,
+    .partnership-section,
+    .categories,
+    .featured-courses,
+    .testimoni-section,
+    .action-section {
+        margin-top: var(--spacing-16); 
+        margin-bottom: var(--spacing-16);
+        margin-left: var(--spacing-4);
+        margin-right: var(--spacing-4);
+    }
+
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .partnership-image-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .testimoni-card {
+        width: 320px; 
+    }
+}

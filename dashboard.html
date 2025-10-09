@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./public/assets/TrainityMarkWhite.png">
+    <link rel="stylesheet" href="./public/css/default.css">
+    <link rel="stylesheet" href="./public/css/charless.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <title>Dashboard Pengguna | Trainity</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav style="display: flex;">
+            <div class="logo-navbar">
+                <a href="./index.html">
+                    <img class="logo-img" src="./public/assets/TrainityFullWhite.png" alt="Logo Trainity">
+                </a>
+            </div>
+
+            <div class="burger" id="burger">
+                <i class="bx bx-menu"></i>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./kursus.html" class="nav-link">Kursus</a>
+                <a href="./lainnya.html" class="nav-link" id="lainnya-link">Lainnya</a>
+                <a href="./login.html" class="btn-outline" id="login-link">Login</a>
+                <a href="./signup.html" class="btn-primary" id="signup-link">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <h1>Kursus Saya</h1>
+        <p class="dashboard-subtitle">Lanjutkan perjalanan belajarmu dan raih impianmu di dunia teknologi.</p>
+
+        <div class="tabs">
+            <button class="tab-button active" data-target="#active-courses">Kursus Aktif</button>
+            <button class="tab-button" data-target="#completed-courses">Kursus Selesai</button>
+        </div>
+
+        <div class="tab-content">
+            <section id="active-courses" class="tab-pane active">
+                <p class="tab-info">Daftar kursus yang sedang Anda ikuti. Lanjutkan progres belajarmu!</p>
+                <div class="course-list" id="active-courses-list"></div>
+            </section>
+
+            <section id="completed-courses" class="tab-pane">
+                <p class="tab-info">Daftar kursus yang telah Anda selesaikan 100%.</p>
+                <div class="course-list" id="completed-courses-list"></div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- LEFT -->
+            <div class="footer-left">
+            <a href="./index.html" class="footer-logo"><img src="./public/assets/TrainityFullWhite.png" width="240px"></a>
+            <p class="footer-thanks">Terima kasih telah berkunjung ke situs kami. Saya harap anda mendapatkan manfaat dari website ini</p>
+            </div>
+
+            <!-- CENTER -->
+            <div class="footer-center">
+            <nav class="footer-nav" id="footer-nav">
+                <p>Halaman</p>
+                <a href="./index.html">Home</a>
+                <a href="./kursus.html">Kursus</a>
+                <a href="./lainnya.html" id="footer-lainnya">Lainnya</a>
+                <a href="./login.html" id="footer-login">Login</a>
+                <a href="./signup.html" id="footer-signup">Sign Up</a>
+            </nav>
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="footer-right">
+            <h4>About Us</h4>
+            <p>Trainity, Platform belajar coding dengan tampilan yang modern dan intuitif. Bekerja sama bersama Profesional dengan tujuan  menciptakan Programmer Indonesia yang lebih Kompetitif di Internasional</p>
+            
+            <h4 style="margin-top: 1rem;">Contact</h4>
+            <p>Email: <a href="mailto:info@trainity.com">info@trainity.com</a></p>
+            <p>Phone: <a href="https://wa.me/6283835360789">+62 838-3536-0789</a></p>
+            
+            <div class="footer-social">
+                <a href="https://github.com/kaminglo" target="_blank"><i class="bx bxl-github"></i></a>
+                <a href="https://instagram.com/kaminglo_" target="_blank"><i class="bx bxl-instagram"></i></a>
+                <a href="https://linkedin.com/in/kaming-lo" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://wa.me/6283835360789" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+            </div>
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Trainity. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./public/js/burger.js"></script>
+    <script src="./public/js/navbar.js"></script>
+    <script src="./public/js/footer.js"></script>
+    <script src="./public/js/auth-check.js"></script>
+    <script src="./public/js/charless/tabDashboard.js"></script>
+    <script src="./public/js/charless/kursusDashboard.js"></script>
+</body>
+</html>

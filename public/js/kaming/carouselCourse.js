@@ -1,0 +1,99 @@
+const carousel = document.getElementById("carousel");
+
+function renderCarousel(data, key){
+    
+    const certificate = document.createElement("div");
+    certificate.className = "carousel-card";
+    certificate.innerHTML = `
+            <div class="carousel-body" data-link="certificate">
+                <img src="./public/assets/Serti.png">
+                <h3>Ambil Sertifikat ${key}</h3>
+                <a class="btn-link" href="sertifikat.html?key=${key}">Klik disini</a>
+            </div>
+    `;
+    
+    data.videos.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "carousel-card";
+        card.innerHTML = `
+            <button class="carousel-body" data-link="${item.link}" data-title="${item.title}" >
+                <img src="https://img.youtube.com/vi/${item.link}/hqdefault.jpg" alt="${item.title}">
+                <h3>${item.title}</h3>
+                <a class="btn-link">Klik disini</a>
+            </button>
+        `;
+        carousel.appendChild(card);
+    });
+
+    carousel.appendChild(certificate);
+
+    updateLastChecked(key, data.videos[0].title);
+    Iframe(data.videos[0].link);
+    renderDetail(data, data.videos[0].title);
+    
+    
+    document.querySelectorAll(".carousel-body").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const link = btn.getAttribute("data-link");
+            console.log(link);
+            if(link == "certificate"){
+                window.location.href = `sertifikat.html?key=${key}`;
+            }
+
+            const title = btn.getAttribute("data-title");
+            updateLastChecked(key, title);
+            renderDetail(data, title);
+            renderIframe(link);
+        });
+    });
+}
+
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+
+const cardWidth = 300;
+
+prevBtn.addEventListener("click", () => {
+carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
+});
+
+nextBtn.addEventListener("click", () => {
+carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
+});
+
+function updateLastChecked(key, title) {
+    const userSessionStr = sessionStorage.getItem('loggedInUser');
+    if (!userSessionStr) {
+        console.error('Session user tidak ditemukan.');
+        return;
+    }
+
+    const currentUser = JSON.parse(userSessionStr);
+    if (!currentUser.email) {
+        console.error('Email user tidak ditemukan di sessionStorage.');
+        return;
+    }
+
+    const dataStr = localStorage.getItem('LastChecked');
+    let usersData = dataStr ? JSON.parse(dataStr) : [];
+
+    let user = usersData.find(u => u.Email === currentUser.email);
+
+    if (!user) {
+        user = {
+            Email: currentUser.email,
+            lastChecked: [{ Key: key, TitleChecked: title }]
+        };
+        usersData.push(user);
+    } else {
+        const existingKey = user.lastChecked.find(lc => lc.Key === key);
+        if (existingKey) {
+            existingKey.TitleChecked = title;
+        } else {
+            user.lastChecked.push({ Key: key, TitleChecked: title });
+        }
+    }
+
+    localStorage.setItem('LastChecked', JSON.stringify(usersData));
+    console.log('Data berhasil diperbarui:', usersData);
+}

@@ -1,0 +1,674 @@
+{
+  "HTML": {
+    "short_description":"Bahasa markup dasar untuk membuat struktur halaman web, fondasi dari semua situs di internet.",
+    "description" : "HTML itu fondasi semua halaman web. Bisa dibilang kayak “rangka” dari sebuah website. Isinya cuma struktur: paragraf, heading, gambar, link, video, form, dan elemen lain. Tanpa HTML, browser nggak punya apa-apa buat ditampilkan. Versi modern (HTML5) udah support banyak fitur multimedia dan semantik, jadi lo bisa bikin web lebih ramah mesin pencari (SEO) sekaligus interaktif tanpa ribet plugin tambahan.",
+    "videos" : [
+        {
+        "title": "HTML Basics: Introduction to HTML",
+        "link": "NBZ9Ro6UKV8"
+        },
+        {
+        "title": "HTML Basics : Hello World!",
+        "link": "1NicaVOCXHA"
+        },
+        {
+        "title": "HTML Basic: Code Editor",
+        "link": "3sLSi9L5nWE"
+        },
+        {
+        "title": "HTML Basic : Tag",
+        "link": "cUWBYzA6M-8"
+        },
+        {
+        "title": "HTML Basic: Paragraph",
+        "link": "Dl_bIYBc9gM"
+        },
+        {
+        "title": "HTML Basic : Heading",
+        "link": "SMetRBdIh-8"
+        },
+        {
+        "title": "HTML Basic: List",
+        "link": "gLHEoeupIZs"
+        },
+        {
+        "title": "HTML Basic : Hyperlinks",
+        "link": "QIlBOI-hTuA"
+        },
+        {
+        "title": "HTML Basic: Image",
+        "link": "yb_emYhY3Pc"
+        },
+        {
+        "title": "HTML Basic : Tables",
+        "link": "7-QNafrXigs"
+        },
+        {
+        "title": "HTML Basic : Table Merging",
+        "link": "qs8G2XWf7Yk"
+        },
+        {
+        "title": "HTML Basic: Forms",
+        "link": "LQf_Jj7jbCI"
+        },
+        {
+        "title": "HTML Basic: Form (Advanced)",
+        "link": "_CNkLKU-LoE"
+        }
+  ]},
+  "CSS": {
+    "short_description":"Bahasa styling yang mengatur tampilan visual website: warna, layout, font, animasi, dan responsivitas.",
+    "description" : "Kalau HTML itu rangka, CSS adalah bajunya. Dia yang bikin web enak dipandang: warna, font, layout, animasi, sampai transisi halus. Dengan CSS modern (kayak Flexbox dan Grid), styling jadi lebih fleksibel tanpa perlu hack aneh-aneh. Plus, ada preprocessor kayak Sass atau framework kayak Tailwind yang bikin styling lebih cepat dan rapi.",
+    "videos" : [
+    {
+      "title": "CSS Basic: Introduction",
+      "link": "CleFk3BZB3g"
+    },
+    {
+      "title": "CSS Basic: CSS Anatomy",
+      "link": "8lXDi2Mxp9c"
+    },
+    {
+      "title": "CSS Basic: CSS Placement",
+      "link": "bnnislprJro"
+    },
+    {
+      "title": "CSS Basic: Font Styling",
+      "link": "nPHed3_oPvY"
+    },
+    {
+      "title": "CSS Basic: Text Styling",
+      "link": "xih8giA7S3Q"
+    },
+    {
+      "title": "CSS Basic: Background",
+      "link": "zm-HPYS_ELU"
+    },
+    {
+      "title": "CSS Basic: Selector",
+      "link": "0KLwWyQyMQo"
+    },
+    {
+      "title": "CSS Basic : Pseudo Class",
+      "link": "G0gYWdIHOug"
+    },
+    {
+      "title": "CSS Basic: Inheritance",
+      "link": "kY2FEA3y43E"
+    },
+    {
+      "title": "CSS Basic: Specificity",
+      "link": "yu74Y1ndd5w"
+    }
+  ]},
+  "Javascript": {
+    "short_description":"Bahasa pemrograman utama di web untuk membuat halaman interaktif, dari validasi form sampai aplikasi SPA.",
+    "description" : "JS adalah otak dari web modern. Dia bikin halaman jadi interaktif—mulai dari tombol yang ngeklik, form yang validasi real-time, sampai aplikasi web full-blown kayak Gmail. JavaScript modern (ES6 ke atas) punya fitur canggih: async/await buat handle request, modul biar kodenya terstruktur, dan class biar lebih mirip OOP. Intinya, JS bikin web lo hidup.",
+    "videos":[
+    {
+      "title": "Intro Javascript",
+      "link": "RUTV_5m4VeI"
+    },
+    {
+      "title": "Apa itu Pemograman?",
+      "link": "Ncrlg9kTC6U"
+    },
+    {
+      "title": "Bahasa Pemograman",
+      "link": "dugL0oYx0w0"
+    },
+    {
+      "title": "Compiler Vs Interpreter",
+      "link": "gCBysZKiU3Y"
+    },
+    {
+      "title": "Kenapa Belajar JavaScript",
+      "link": "6UhT1lmV9DE"
+    },
+    {
+      "title": "Sejarah Javascript",
+      "link": "G4LEU-NtQUg"
+    },
+    {
+      "title": "Lingkungan Pengembangan Javascript",
+      "link": "h7zwbfS5CVU"
+    },
+    {
+      "title": "Nilai dan Tipe Data pada Javascript",
+      "link": "1FAnrYu7LCM"
+    },
+    {
+      "title": "Tipe Data pada Javascript: Angka",
+      "link": "oPlEq7fewIg"
+    },
+    {
+      "title": "Operator pada Javascript : Aritmatika, Penugasan & Perbandingan",
+      "link": "EnXClrVdpTM"
+    },
+    {
+      "title": "Operator pada Javascript : Logika, String, Typeof dan Kondisional",
+      "link": "_XSeF00qNWE"
+    },
+    {
+      "title": "Tipe Data pada Javascript: String",
+      "link": "ud322_5-M3s"
+    },
+    {
+      "title": "Tipe Data pada Javascript: Boolean",
+      "link": "y1X-JoJMXXA"
+    },
+    {
+      "title": "Variabel pada Javascript",
+      "link": "X1q_cK0Qv6o"
+    },
+    {
+      "title": "Menulis Javascript",
+      "link": "a7Kheeu59JQ"
+    },
+    {
+      "title": "PopUp Box pada Javascript",
+      "link": "4f4Cqr3NSRI"
+    },
+    {
+      "title": "Control Flow pada Javascript",
+      "link": "cL5aeWbIEuk"
+    },
+    {
+      "title": "Pengulangan \"While\" pada Javascript",
+      "link": "61XLzozBj2c"
+    },
+    {
+      "title": "Pengulangan \"Tabel Penelusuran\"",
+      "link": "2hh8xt1EvQ8"
+    },
+    {
+      "title": "For Looping di Javascript",
+      "link": "1HussC8jKrk"
+    },
+    {
+      "title": "Pengkondisian: IF ELSE pada Javascript",
+      "link": "hXbDQryJAh0"
+    },
+    {
+      "title": "Pengkondisian: ELSE IF pada Javascript",
+      "link": "u0bl5DXNmVw"
+    },
+    {
+      "title": "Pengkondisian: Latihan Pengkondisian pada Javascript",
+      "link": "siN3zSICIDQ"
+    },
+    {
+      "title": "Pengkondisian: Switch pada Javascript",
+      "link": "8Srl-qk5VvM"
+    },
+    {
+      "title": "Pengulangan & Pengkondisian Bersarang pada Javascript",
+      "link": "uRy81uWrkOQ"
+    },
+    {
+      "title": "Membuat Game Suwit Jawa dengan Javascript",
+      "link": "Mmf3SXHifBw"
+    },
+    {
+      "title": "Intro to Function pada Javascript",
+      "link": "6-UqHXBtYkg"
+    },
+    {
+      "title": "Function pada javascript: Membuat dan Menjalankan Fungsi",
+      "link": "dld5ZKHYxC0"
+    },
+    {
+      "title": "Function pada Javascript: Parameter dan Argumen",
+      "link": "MIn5CZhFqKo"
+    },
+    {
+      "title": "Function pada Javascript: Refactoring",
+      "link": "7LGERCBLUSM"
+    },
+    {
+      "title": "Function pada Javascript: Refactoring",
+      "link": "a3CWDShrh0s"
+    },
+    {
+      "title": "Function pada Javascript: Rekursif",
+      "link": "-JV_YbJR1GY"
+    },
+    {
+      "title": "Function pada Javascript: Deklarasi vs Ekspresi",
+      "link": "3-Grei4X2NI"
+    },
+    {
+      "title": "Array pada Javascript: Intro",
+      "link": "CW5pfpafgDE"
+    },
+    {
+      "title": "Array pada Javascript: Manipulasi Array",
+      "link": "pDSz3sWnPRw"
+    },
+    {
+      "title": "Array pada Javascript: Slice & Splice",
+      "link": "9aMb10KJhsk"
+    },
+    {
+      "title": "Array pada Javascript: Foreach & Map",
+      "link": "PUiEP7PBfh0"
+    },
+    {
+      "title": "Array pada Javascript: Filter & Find",
+      "link": "5leAoG35T14"
+    },
+    {
+      "title": "Membuat Program Manajemen Penumpang dengan Javascript",
+      "link": "mgRpWhNNGZo"
+    },
+    {
+      "title": "Membuat Program Manajemen Penumpang dengan Javascript untuk Angkot (Bagian 2)",
+      "link": "5v9WiGqfdWE"
+    },
+    {
+      "title": "Objek pada Javascript: Intro",
+      "link": "RKsapPaUgww"
+    },
+    {
+      "title": "Objek pada Javascript: Membuat Objek",
+      "link": "bUZKDBgJFIM"
+    },
+    {
+      "title": "Objek pada Javascript: Keyword \"This\"",
+      "link": "5cGPf1sdTvw"
+    },
+    {
+      "title": "Objek pada Javascript: Latihan Objek (Selesai)",
+      "link": "JtESnohPUIw"
+    }
+  ]},
+  "NodeJS": {
+    "short_description":"Runtime JavaScript berbasis V8 yang memungkinkan JS dijalankan di server, populer untuk backend modern.",
+    "description": "Node.js bawa JavaScript ke dunia server. Jadi lo nggak cuma pakai JS di frontend, tapi juga backend. Dia pakai V8 Engine (mesin yang dipakai Chrome) buat jalanin JS super cepat. Cocok buat bikin API, real-time chat, streaming, atau microservices. Dengan ekosistem npm (package manager-nya), lo bisa nemuin jutaan modul siap pakai buat segala kebutuhan.",
+    "videos":[
+    {
+      "title": "Apa itu NodeJS?",
+      "link": "sSLJx5t4OJ4"
+    },
+    {
+      "title": "Arsitektur NodeJS",
+      "link": "wcQaspZE-20"
+    },
+    {
+      "title": "Instalasi & Konfigurasi NodeJS",
+      "link": "VfN1_pEdQAA"
+    },
+    {
+      "title": "Node REPL (Read - Eval - Print - Loop)",
+      "link": "74a8L0HZE-Q"
+    },
+    {
+      "title": "Running Node Files",
+      "link": "Fa2BggXYE24"
+    },
+    {
+      "title": "NodeJS Module System",
+      "link": "9hT29YQuB2U"
+    },
+    {
+      "title": "NodeJS Core Module",
+      "link": "PzjGJFUjms4"
+    },
+    {
+      "title": "Apa itu NPM?",
+      "link": "WVHkBuiCcIs"
+    },
+    {
+      "title": "Menggunakan Package NPM",
+      "link": "XT2Vvs_KgTI"
+    },
+    {
+      "title": "Membuat Aplikasi Kontak (Bagian 1)",
+      "link": "IXyMKLIGf6Y"
+    },
+    {
+      "title": "Membuat Aplikasi Kontak (Bagian 2)",
+      "link": "3zX5VmbOHxk"
+    },
+    {
+      "title": "Membuat Aplikasi Kontak (Bagian 3)",
+      "link": "ZR2X1mlAkcU"
+    },
+    {
+      "title": "NodeJS Web Server",
+      "link": "sN49luguIrc"
+    },
+    {
+      "title": "Apa itu Express?",
+      "link": "TecGUz4bPFA"
+    },
+    {
+      "title": "Express View Engine",
+      "link": "5VM5NGje2W8"
+    },
+    {
+      "title": "Express Middleware",
+      "link": "IDeVryWnXFw"
+    },
+    {
+      "title": "Aplikasi Kontak dengan Express (Bagian 1)",
+      "link": "8cVWOdcWUu0"
+    },
+    {
+      "title": "Aplikasi Kontak dengan Express (Bagian 2)",
+      "link": "eu4uwmyHMHo"
+    },
+    {
+      "title": "Aplikasi Kontak dengan Express (Bagian 3)",
+      "link": "xrYD_IhmuTM"
+    },
+    {
+      "title": "Apa itu MongoDB?",
+      "link": "Jfw9c0C0Zt8"
+    },
+    {
+      "title": "Instalasi & Konfigurasi MongoDB",
+      "link": "iXhmi0NYdc8"
+    },
+    {
+      "title": "MongoDB & NodeJS",
+      "link": "oUFyCpIl6tA"
+    },
+    {
+      "title": "Aplikasi Kontak MongoDB dengan Mongoose (Bagian 1)",
+      "link": "E3FRqyu5s_4"
+    },
+    {
+      "title": "Aplikasi Kontak MongoDB dengan Mongoose (Bagian 2)",
+      "link": "iL6zhc3HZuw"
+    }
+  ]},
+  "React": {
+    "short_description":"Library frontend dari Facebook untuk membangun UI interaktif dengan konsep komponen dan virtual DOM.",
+    "description" : "React adalah library frontend buatan Meta (Facebook). Konsep utamanya: komponen. Jadi lo bisa bikin UI kayak lego, potongan kecil yang reusable. Dia juga punya Virtual DOM yang bikin performa rendering lebih ngebut. Ekosistem React gede banget—Next.js buat SSR, React Native buat mobile, Redux/Zustand buat state management. Simpelnya: React bikin bikin aplikasi modern jauh lebih scalable dan terstruktur.",
+    "videos" : [
+    {
+      "title": "React untuk Pemula",
+      "link": "kcnwI_5nKyA"
+    },
+    {
+      "title": "Instalasi & Konfigurasi ReactJS",
+      "link": "RVH_5L5Lsp0"
+    },
+    {
+      "title": "Membuat Game Tic Tac Toe Menggunakan ReactJS",
+      "link": "Ji8lAuohopk"
+    },
+    {
+      "title": "Membuat Aplikasi Catatan Belanja Menggunakan ReactJS",
+      "link": "HX2kAHnCEjY"
+    },
+    {
+      "title": "Semua Hal Tentang Component",
+      "link": "-9Z9a91vTLc"
+    }
+  ]},
+  "Golang": {
+    "short_description":"Bahasa buatan Google yang cepat, efisien, dan mudah diparalelkan, populer untuk sistem backend berskala besar.",
+    "description" : "Golang buatan Google, fokus ke performa dan efisiensi. Sintaksnya simpel kayak C, tapi punya fitur modern kayak garbage collector dan goroutine (concurrency super ringan). Makanya Go populer buat bikin backend dengan traffic tinggi: API, sistem cloud, microservices, sampai aplikasi skala enterprise. Filosofinya: cepat, sederhana, dan bisa di-maintain dengan tim besar.",
+    "videos": [
+    {
+      "title": "Introduction to Golang",
+      "link": "NnTt0eOvW0k"
+    },
+    {
+      "title": "Membuat Sebuah Project Golang",
+      "link": "dl4K6s-T8u8"
+    },
+    {
+      "title": "Tipe Data di Golang",
+      "link": "k_AAi6vXFlI"
+    },
+    {
+      "title": "Konversi di Golang",
+      "link": "Ut3xMbxX6WE"
+    },
+    {
+      "title": "Array di Golang",
+      "link": "2lfV4Bls5h8"
+    },
+    {
+      "title": "Slice di Golang",
+      "link": "MBzTFAS-a-w"
+    },
+    {
+      "title": "Map di Golang",
+      "link": "bTiK5SgIGU4"
+    },
+    {
+      "title": "Operasi Matematika di Golang",
+      "link": "6q7yeMfSy-s"
+    },
+    {
+      "title": "Perbandingan di Golang",
+      "link": "Aw-9Dk57CEs"
+    },
+    {
+      "title": "Conditionals / Branching di Golang",
+      "link": "xWAnmRaO0p4"
+    },
+    {
+      "title": "Switch di Golang",
+      "link": "82LSdYMCRSo"
+    },
+    {
+      "title": "For Loop di Golang",
+      "link": "ha8eijPhdK8"
+    }
+  ]},
+  "PHP": {
+    "short_description":"Bahasa server-side yang dipakai untuk membangun website dinamis, mudah dipelajari, dan punya ekosistem luas.",
+    "description": "PHP udah lama jadi tulang punggung web. Walaupun sering diremehin, faktanya mayoritas web (termasuk WordPress) masih jalan dengan PHP. Bahasa ini gampang dipelajari, punya banyak dokumentasi, dan komunitas gede. Versi modern (PHP 7/8) udah jauh lebih cepat dan punya fitur OOP yang solid, bikin PHP tetap relevan di dunia backend.",
+    "videos" : [
+    {
+      "title": "Introduction to PHP",
+      "link": "l1W2OwV5rgY"
+    },
+    {
+      "title": "Sejarah & Karakteristik PHP",
+      "link": "q3NVC5JxgVI"
+    },
+    {
+      "title": "Persiapan Development Environment",
+      "link": "o8oLQVYlpqw"
+    },
+    {
+      "title": "Sintaks PHP",
+      "link": "XTrU0GzMfCk"
+    },
+    {
+      "title": "Struktur Control",
+      "link": "9gpAJPWD-xI"
+    },
+    {
+      "title": "Function di PHP",
+      "link": "R5C70w2MOkE"
+    },
+    {
+      "title": "Function di PHP",
+      "link": "R5C70w2MOkE"
+    },
+    {
+      "title": "Array di PHP",
+      "link": "qp1l7A4xDIc"
+    },
+    {
+      "title": "Array Asosiatif di PHP",
+      "link": "mNgOuUUp1I0"
+    },
+    {
+      "title": "Metode Get & Post di PHP",
+      "link": "6vG4oO39ivY"
+    },
+    {
+      "title": "Database MySQL",
+      "link": "fxe6qev-bno"
+    },
+    {
+      "title": "MySQL & PHP",
+      "link": "gvkr2V-JULE"
+    },
+    {
+      "title": "Insert & Delete di PHP",
+      "link": "L-gKceeb61Q"
+    },
+    {
+      "title": "Update di PHP",
+      "link": "wlJ-UvXucpc"
+    },
+    {
+      "title": "Searching di PHP",
+      "link": "K_ldbZMOvGA"
+    },
+    {
+      "title": "Upload di PHP",
+      "link": "Bsdtpx4WUIU"
+    },
+    {
+      "title": "Registrasi Form di PHP",
+      "link": "b2jUL5RDI18"
+    },
+    {
+      "title": "Login Form di PHP",
+      "link": "2pAApp655es"
+    },
+    {
+      "title": "Session di PHP",
+      "link": "PiYKZ65dkqc"
+    },
+    {
+      "title": "Cookie (Remember me) di PHP",
+      "link": "maW4kzHrdKQ"
+    },
+    {
+      "title": "Pagination di PHP",
+      "link": "Q1xJdoHrTj4"
+    },
+    {
+      "title": "Live Search (dengan AJAX)",
+      "link": "uND-7A6Hpb8"
+    },
+    {
+      "title": "Live Search (Menggunakan JQuery)",
+      "link": "aS_V-bMATrw"
+    },
+    {
+      "title": "PDF Reporting di PHP",
+      "link": "C9Tj7EBrtFo"
+    },
+    {
+      "title": "Hosting Website & Domain Name Gratis",
+      "link": "7Sz-iHBcXHo"
+    },
+    {
+      "title": "Web Hosting & Domain Name Berbayar",
+      "link": "7N8MDUJbrRU"
+    }
+  ]},
+  "Laravel 8": {
+    "short_description":"Framework PHP modern dengan sintaks elegan, ORM bawaan (Eloquent), serta banyak fitur untuk web development cepat.",
+    "description": "Laravel adalah framework PHP modern yang terkenal dengan elegan dan produktif. Bikin backend jadi gampang karena udah ada fitur lengkap: routing, authentication, ORM (Eloquent), queue, scheduler, sampai API-ready. Laravel juga punya ecosystem kuat: Laravel Breeze/Jetstream buat auth, Livewire/Inertia buat interaktivitas. Intinya, Laravel bikin developer lebih fokus ke logika bisnis daripada ngurusin hal-hal dasar berulang.",
+    "videos": [
+    {
+      "title": "Introduction to Laravel",
+      "link": "HqAMb6kqlLs"
+    },
+    {
+      "title": "Konfigurasi & Instalasi Laravel",
+      "link": "pZqk57Xvujs"
+    },
+    {
+      "title": "Struktur Folder, Routes & View",
+      "link": "u7zS2XpMpsc"
+    },
+    {
+      "title": "Blade Templating Engine",
+      "link": "9jrD0wcfq1g"
+    },
+    {
+      "title": "Models, Collections & Controllers",
+      "link": "ptWgufbjURA"
+    },
+    {
+      "title": "Database, Migration & Eloquent",
+      "link": "ePBWUZRQdrI"
+    },
+    {
+      "title": "Post Model",
+      "link": "o1em86nhU28"
+    },
+    {
+      "title": "Post Category & Eloquent Relationship",
+      "link": "HR_Piu6qtoI"
+    },
+    {
+      "title": "Database Seeder",
+      "link": "aC6MJgsxgrk"
+    },
+    {
+      "title": "Factory Faker",
+      "link": "xXc6Ti7qwi0"
+    },
+    {
+      "title": "N+1 Problem di Laravel",
+      "link": "q8FmWY5y0qI"
+    },
+    {
+      "title": "Redesign UI",
+      "link": "1WDHJorZK9M"
+    },
+    {
+      "title": "Searching & Pagination",
+      "link": "YzGH6odpwpc"
+    },
+    {
+      "title": "View Login & Registration",
+      "link": "Wf7RliwJxj4"
+    },
+    {
+      "title": "User Registration",
+      "link": "6sIk2sYacTw"
+    },
+    {
+      "title": "User Login & Middleware",
+      "link": "6oHk5d_KpkU"
+    },
+    {
+      "title": "Dashboard UI",
+      "link": "Glrg5G9OoS8"
+    },
+    {
+      "title": "Create Post Form",
+      "link": "rs48iVajzWc"
+    },
+    {
+      "title": "Validation & Insert Post",
+      "link": "WLejN_riW_8"
+    },
+    {
+      "title": "Update & Delete Posts",
+      "link": "QW1EpaUnCJ0"
+    },
+    {
+      "title": "Upload Image",
+      "link": "CnqsB0ERlcI"
+    },
+    {
+      "title": "Preview, Update & Delete Image",
+      "link": "4fDp3vsGSWg"
+    },
+    {
+      "title": "Authorization",
+      "link": "OkIa6e3SP2U"
+    },
+    {
+      "title": "Hosting website (Gratis)",
+      "link": "wNmgAm9xvwk"
+    }
+  ]}
+}
