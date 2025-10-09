@@ -44,7 +44,3 @@ Kalau mau jalankan di lokal:
 ```bash
 git clone https://github.com/kaminglo/Trainity.git
 cd Trainity
-=======
-# db folder
-untuk folder database dengan json.
->>>>>>> 56e2380d2090316de0d53fbc3e8020f652da6f2a
