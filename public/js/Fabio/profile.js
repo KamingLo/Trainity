@@ -17,14 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
         alert.id = 'custom-alert';
         alert.className = `custom-alert ${type}`;
         
+        const iconClass = type === 'success' ? 'bx-check-circle' : 'bx-error-circle';
+        
         alert.innerHTML = `
             <div class="alert-content">
-                <i class='bx ${type === 'success' ? 'bx-check-circle' : 'bx-error-circle'}'></i>
+                <i class='bx ${iconClass}'></i>
                 <span>${message}</span>
             </div>
         `;
 
         document.body.appendChild(alert);
+
         setTimeout(() => {
             alert.classList.add('show');
         }, 10);
@@ -87,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const imageUrl = e.target.result;
                 profileAvatar.src = imageUrl;
                 sessionStorage.setItem('profileAvatar', imageUrl);
+                showAlert('Foto profil berhasil diubah!');
             };
             
             reader.readAsDataURL(file);
@@ -105,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const newUsername = inputNamaLengkap.value;
 
         if (newPasswordValue !== '' && newPasswordValue !== confirmPasswordValue) {
-            showAlert('Password baru dan konfirmasi password tidak cocok!');
+            showAlert('Password baru dan konfirmasi password tidak cocok!', 'error');
             return;
         }
 

@@ -169,6 +169,14 @@
     font-size: 0.9rem;
 }
 
+.custom-alert.error {
+    border-left-color: #f44336;
+}
+
+.alert-content i.bx-error-circle {
+    color: #f44336;
+}
+
 @media (max-width: 768px) {
     .custom-alert {
         top: 10px;
@@ -384,25 +392,79 @@ body.sertifikat-page {
     100% { transform: rotate(360deg); }
 }
 
+/* Responsive Design untuk Mobile */
 @media (max-width: 1200px) {
     .sertifikat-body {
         width: 95%;
         height: auto;
         aspect-ratio: 1123 / 794;
         max-width: 1123px;
-    }
-    
-    .sertifikat-container-design {
-        width: calc(100% - 40px);
-        height: calc(100% - 40px);
-        padding: 20px;
+        transform: scale(0.9);
     }
 }
 
 @media (max-width: 768px) {
     .sertifikat-wrapper {
-        gap: 20px;
-        padding: 15px;
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .sertifikat-body {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1123 / 794;
+        transform: scale(0.8);
+    }
+    
+    .sertifikat-container-design {
+        padding: 25px;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+    }
+    
+    .logo-sertifikat {
+        width: 120px;
+    }
+    
+    .header-sertifikat p {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        margin-top: 10px;
+    }
+    
+    .content-sertifikat h2 {
+        font-size: 1.1rem;
+    }
+    
+    .content-sertifikat h1#nama-peserta {
+        font-size: 1.8rem;
+        margin: 5px 0 12px 0;
+    }
+    
+    .kursus-desc {
+        font-size: 0.85rem;
+    }
+    
+    .kursus-title#judul-kursus {
+        font-size: 1.3rem;
+        margin-top: 5px;
+    }
+    
+    .signature img#tanda-tangan {
+        width: 100px;
+        height: 50px;
+    }
+    
+    .signature p#nama-instruktur {
+        font-size: 0.9rem;
+    }
+    
+    .signature span {
+        font-size: 0.8rem;
+    }
+    
+    .date-id {
+        font-size: 0.8rem;
     }
     
     .download-btn {
@@ -410,12 +472,107 @@ body.sertifikat-page {
         font-size: 1rem;
         min-width: 180px;
     }
+}
+
+@media (max-width: 480px) {
+    .sertifikat-page {
+        padding: 5px;
+        align-items: flex-start;
+    }
+    
+    .sertifikat-wrapper {
+        gap: 10px;
+        padding: 5px;
+    }
+    
+    .sertifikat-body {
+        transform: scale(0.7);
+        margin: -20px 0;
+    }
+    
+    .sertifikat-container-design {
+        padding: 20px;
+        width: calc(100% - 30px);
+        height: calc(100% - 30px);
+    }
+    
+    .logo-sertifikat {
+        width: 80px;
+    }
+    
+    .header-sertifikat p {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
+    
+    .content-sertifikat h2 {
+        font-size: 0.9rem;
+    }
     
     .content-sertifikat h1#nama-peserta {
-        font-size: 2.5rem;
+        font-size: 1.4rem;
+        margin: 3px 0 8px 0;
+    }
+    
+    .kursus-desc {
+        font-size: 0.75rem;
     }
     
     .kursus-title#judul-kursus {
-        font-size: 1.8rem;
+        font-size: 1rem;
+        margin-top: 3px;
+    }
+    
+    .footer-sertifikat {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    
+    .date-id {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    
+    .signature img#tanda-tangan {
+        width: 80px;
+        height: 40px;
+    }
+    
+    .signature p#nama-instruktur {
+        font-size: 0.8rem;
+    }
+    
+    .signature span {
+        font-size: 0.7rem;
+    }
+    
+    .download-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 320px) {
+    .sertifikat-body {
+        transform: scale(0.6);
+        margin: -30px 0;
+    }
+    
+    .content-sertifikat h1#nama-peserta {
+        font-size: 1.2rem;
+    }
+    
+    .kursus-title#judul-kursus {
+        font-size: 0.9rem;
+    }
+    
+    .download-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        min-width: 140px;
     }
 }

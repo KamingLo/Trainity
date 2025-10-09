@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
 
-     sertifikatContainer.innerHTML = sertifikatInnerHTML;
+    sertifikatContainer.innerHTML = sertifikatInnerHTML;
 
     const downloadBtn = document.getElementById('downloadBtn');
     downloadBtn.addEventListener('click', function() {
@@ -55,11 +55,31 @@ document.addEventListener('DOMContentLoaded', function() {
         downloadBtn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Memproses...';
         downloadBtn.disabled = true;
 
+        // Simpan transform scale sementara
+        const originalTransform = sertifikatContainer.style.transform;
+        const originalMargin = sertifikatContainer.style.margin;
+        
+        // Reset transform untuk capture yang tepat
+        sertifikatContainer.style.transform = 'scale(1)';
+        sertifikatContainer.style.margin = '0';
+        sertifikatContainer.style.width = '1123px';
+        sertifikatContainer.style.height = '794px';
+
         html2canvas(sertifikatContainer, { 
             scale: 2,
             useCORS: true,
-            logging: false
+            logging: false,
+            width: 1123,
+            height: 794,
+            scrollX: 0,
+            scrollY: 0
         }).then(canvas => {
+            // Kembalikan transformasi
+            sertifikatContainer.style.transform = originalTransform;
+            sertifikatContainer.style.margin = originalMargin;
+            sertifikatContainer.style.width = '';
+            sertifikatContainer.style.height = '';
+
             const imageData = canvas.toDataURL('image/png');
             const { jsPDF } = window.jspdf;
 
@@ -67,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const pdfHeight = canvas.height;
             
             const doc = new jsPDF({
-                orientation: pdfWidth > pdfHeight ? 'landscape' : 'portrait',
+                orientation: 'landscape',
                 unit: 'px',
                 format: [pdfWidth, pdfHeight]
             });
@@ -83,7 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Terjadi error saat mengunduh sertifikat. Silakan coba lagi.');
             downloadBtn.innerHTML = originalContent;
             downloadBtn.disabled = false;
+            
+            // Kembalikan transformasi jika error
+            sertifikatContainer.style.transform = originalTransform;
+            sertifikatContainer.style.margin = originalMargin;
+            sertifikatContainer.style.width = '';
+            sertifikatContainer.style.height = '';
         });
     });
 });
-
