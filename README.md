@@ -44,3 +44,5 @@ Kalau mau jalankan di lokal:
 ```bash
 git clone https://github.com/kaminglo/Trainity.git
 cd Trainity
+
+``Disclaimer : HARUS GUNAKAN LIVE SERVER EXTENSION DI VS CODE!!
